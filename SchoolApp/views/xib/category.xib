@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Swissra Heavy.otf">
+            <string>Swissra-Heavy</string>
+        </array>
+        <array key="Swissra Light.otf">
+            <string>Swissra-Light</string>
+        </array>
+        <array key="Swissra Medium.otf">
+            <string>Swissra-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CategoryCell" id="iN0-l3-epB" customClass="CategoryCell" customModule="KuwaitSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5w-hA-RO9">
+                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القسم الأول" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-Gj-tra">
+                            <rect key="frame" x="12" y="81.666666666666671" width="156" height="18"/>
+                            <fontDescription key="fontDescription" name="Swissra-Medium" family="Swissra-Medium" pointSize="18"/>
+                            <color key="textColor" red="0.14154058689999999" green="0.54149049520000003" blue="0.23449304700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cia-ar-tDs">
+                            <rect key="frame" x="152.66666666666666" y="158" width="22.333333333333343" height="17"/>
+                            <fontDescription key="fontDescription" name="Swissra-Heavy" family="Swissra-Heavy" pointSize="17"/>
+                            <color key="textColor" red="0.14154058689999999" green="0.54149049520000003" blue="0.23449304700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قسم داخلي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irD-VI-ygh">
+                            <rect key="frame" x="96.333333333333329" y="162" width="51.333333333333329" height="10"/>
+                            <fontDescription key="fontDescription" name="Swissra-Light" family="Swissra-Light" pointSize="10"/>
+                            <color key="textColor" red="0.14154058689999999" green="0.54149049520000003" blue="0.23449304700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cia-ar-tDs" secondAttribute="trailing" constant="5" id="8RV-3z-kJ9"/>
+                        <constraint firstItem="cia-ar-tDs" firstAttribute="leading" secondItem="irD-VI-ygh" secondAttribute="trailing" constant="5" id="Ei8-8k-b7H"/>
+                        <constraint firstAttribute="trailing" secondItem="RBS-Gj-tra" secondAttribute="trailing" constant="12" id="KM1-sH-UtW"/>
+                        <constraint firstAttribute="bottom" secondItem="cia-ar-tDs" secondAttribute="bottom" constant="5" id="Uuq-6a-rxS"/>
+                        <constraint firstAttribute="bottom" secondItem="irD-VI-ygh" secondAttribute="bottom" constant="8" id="fbr-Ro-ktj"/>
+                        <constraint firstItem="RBS-Gj-tra" firstAttribute="leading" secondItem="F5w-hA-RO9" secondAttribute="leading" constant="12" id="wFR-JC-BBA"/>
+                        <constraint firstItem="RBS-Gj-tra" firstAttribute="centerY" secondItem="F5w-hA-RO9" secondAttribute="centerY" id="yea-rz-4Lz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="F5w-hA-RO9" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="3jK-5w-PNy">
+                    <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="F5w-hA-RO9" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Et6-7Z-h9D">
+                    <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="F5w-hA-RO9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IdD-56-FIK">
+                    <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="F5w-hA-RO9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qbi-80-T0r">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="card" destination="F5w-hA-RO9" id="7zU-mF-OuM"/>
+                <outlet property="countView" destination="cia-ar-tDs" id="41K-Ml-aKh"/>
+                <outlet property="internalClass" destination="irD-VI-ygh" id="H7r-7p-djw"/>
+                <outlet property="titleView" destination="RBS-Gj-tra" id="ac4-sH-Yzo"/>
+            </connections>
+            <point key="canvasLocation" x="-22" y="-192"/>
+        </view>
+    </objects>
+</document>

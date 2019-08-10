@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Swissra Normal.otf">
+            <string>Swissra-Normal</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BookCell" id="iN0-l3-epB" customClass="BookCell" customModule="KuwaitSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kh-zh-Icq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" translatesAutoresizingMaskIntoConstraints="NO" id="B15-dd-Ii7">
+                            <rect key="frame" x="317" y="26" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="I1w-b4-qrM"/>
+                                <constraint firstAttribute="width" constant="50" id="Wgu-JP-pzC"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الملف الأول" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6w-lW-9GW">
+                            <rect key="frame" x="8" y="41.5" width="301" height="20"/>
+                            <fontDescription key="fontDescription" name="Swissra-Normal" family="Swissra-Normal" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="B15-dd-Ii7" firstAttribute="leading" secondItem="y6w-lW-9GW" secondAttribute="trailing" constant="8" id="65Z-Za-LmK"/>
+                        <constraint firstAttribute="trailing" secondItem="B15-dd-Ii7" secondAttribute="trailing" constant="8" id="9Uo-J6-eo5"/>
+                        <constraint firstItem="y6w-lW-9GW" firstAttribute="centerY" secondItem="3kh-zh-Icq" secondAttribute="centerY" id="DP8-lg-bkj"/>
+                        <constraint firstItem="B15-dd-Ii7" firstAttribute="centerY" secondItem="3kh-zh-Icq" secondAttribute="centerY" id="KtP-pn-7AT"/>
+                        <constraint firstItem="y6w-lW-9GW" firstAttribute="leading" secondItem="3kh-zh-Icq" secondAttribute="leading" constant="8" id="ln2-7V-2HG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3kh-zh-Icq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cqn-dc-nCA"/>
+                <constraint firstItem="3kh-zh-Icq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gkf-pu-NZl"/>
+                <constraint firstItem="3kh-zh-Icq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="qWV-25-9al"/>
+                <constraint firstItem="3kh-zh-Icq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-10" id="wv6-Ek-LcF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="card" destination="3kh-zh-Icq" id="Dia-LM-qjO"/>
+                <outlet property="titleView" destination="y6w-lW-9GW" id="niy-3Q-08S"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-226"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="folder" width="208" height="205"/>
+    </resources>
+</document>

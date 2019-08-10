@@ -1,13 +1,14 @@
 //
 //  AppDelegate.swift
-//  SchoolApp
+//  MyApp
 //
-//  Created by X on 7/11/19.
+//  Created by X on 4/8/19.
 //  Copyright © 2019 X. All rights reserved.
 //
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
+        
+        setUpOneSignal(launchOptions:launchOptions)
+        
+        if !UserDefaults.Configs.onboarding() {
+            setOnBoarding()
+        } else {
+            setDrawerMenu()
+        }
+        
+        //GADMobileAds.configure(withApplicationID: Utils.initialize)
+        // initialized in plist.info
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        
         return true
     }
 
@@ -53,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "SchoolApp")
+        let container = NSPersistentContainer(name: "MyApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

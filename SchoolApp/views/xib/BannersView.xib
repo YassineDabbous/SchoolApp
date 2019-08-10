@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BannersView" id="iN0-l3-epB" customClass="BannersView" customModule="KuwaitSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92v-dS-qGL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOM-Hg-6H5">
+                            <rect key="frame" x="0.0" y="4" width="185" height="92"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vyX-Pi-ZXl">
+                                    <rect key="frame" x="5" y="5" width="175" height="82"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="vyX-Pi-ZXl" secondAttribute="trailing" constant="5" id="OA4-su-wPK"/>
+                                <constraint firstItem="vyX-Pi-ZXl" firstAttribute="leading" secondItem="qOM-Hg-6H5" secondAttribute="leading" constant="5" id="UNb-ps-s2G"/>
+                                <constraint firstItem="vyX-Pi-ZXl" firstAttribute="top" secondItem="qOM-Hg-6H5" secondAttribute="top" constant="5" id="lVs-pz-BPy"/>
+                                <constraint firstAttribute="bottom" secondItem="vyX-Pi-ZXl" secondAttribute="bottom" constant="5" id="uRb-2K-xqg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CR2-ob-fRc">
+                            <rect key="frame" x="187" y="40" width="1" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="2Bm-pN-6mO"/>
+                                <constraint firstAttribute="height" constant="20" id="FfN-Q3-wIM"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGy-cK-uSu">
+                            <rect key="frame" x="190" y="4" width="185" height="92"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FeC-Pv-6Y6">
+                                    <rect key="frame" x="5" y="5" width="175" height="82"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="FeC-Pv-6Y6" firstAttribute="leading" secondItem="hGy-cK-uSu" secondAttribute="leading" constant="5" id="Jgc-oc-MTX"/>
+                                <constraint firstAttribute="trailing" secondItem="FeC-Pv-6Y6" secondAttribute="trailing" constant="5" id="kFg-YI-B5Y"/>
+                                <constraint firstItem="FeC-Pv-6Y6" firstAttribute="top" secondItem="hGy-cK-uSu" secondAttribute="top" constant="5" id="kI1-F9-cta"/>
+                                <constraint firstAttribute="bottom" secondItem="FeC-Pv-6Y6" secondAttribute="bottom" constant="5" id="lEY-SZ-mmZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="qOM-Hg-6H5" firstAttribute="top" secondItem="92v-dS-qGL" secondAttribute="top" constant="4" id="4vh-Xh-Y3C"/>
+                        <constraint firstItem="CR2-ob-fRc" firstAttribute="leading" secondItem="qOM-Hg-6H5" secondAttribute="trailing" constant="2" id="BaD-am-WOh"/>
+                        <constraint firstItem="hGy-cK-uSu" firstAttribute="top" secondItem="92v-dS-qGL" secondAttribute="top" constant="4" id="Gkv-ED-E3x"/>
+                        <constraint firstAttribute="trailing" secondItem="hGy-cK-uSu" secondAttribute="trailing" id="Jtb-nW-h3o"/>
+                        <constraint firstItem="CR2-ob-fRc" firstAttribute="centerY" secondItem="92v-dS-qGL" secondAttribute="centerY" id="Owz-Ow-lsV"/>
+                        <constraint firstAttribute="bottom" secondItem="hGy-cK-uSu" secondAttribute="bottom" constant="4" id="VKM-bW-mvQ"/>
+                        <constraint firstItem="hGy-cK-uSu" firstAttribute="leading" secondItem="CR2-ob-fRc" secondAttribute="trailing" constant="2" id="Y3E-IC-mwq"/>
+                        <constraint firstAttribute="bottom" secondItem="qOM-Hg-6H5" secondAttribute="bottom" constant="4" id="bxI-Xj-9gz"/>
+                        <constraint firstItem="qOM-Hg-6H5" firstAttribute="leading" secondItem="92v-dS-qGL" secondAttribute="leading" id="p9o-up-rap"/>
+                        <constraint firstItem="CR2-ob-fRc" firstAttribute="centerX" secondItem="92v-dS-qGL" secondAttribute="centerX" id="vAa-4s-8AG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="92v-dS-qGL" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="W46-BB-dgg"/>
+                <constraint firstItem="92v-dS-qGL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="nfA-KY-5Sm"/>
+                <constraint firstItem="92v-dS-qGL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nfp-eU-2nE"/>
+                <constraint firstItem="92v-dS-qGL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xnF-a0-RMS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="card1" destination="qOM-Hg-6H5" id="fgI-OX-3fM"/>
+                <outlet property="card2" destination="hGy-cK-uSu" id="W2P-dz-0tq"/>
+                <outlet property="image1" destination="vyX-Pi-ZXl" id="cKh-xE-I6s"/>
+                <outlet property="image2" destination="FeC-Pv-6Y6" id="4eZ-Ze-fPk"/>
+                <outlet property="main" destination="92v-dS-qGL" id="V0o-fR-hMK"/>
+            </connections>
+            <point key="canvasLocation" x="75.5" y="-174"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="960" height="936"/>
+    </resources>
+</document>
