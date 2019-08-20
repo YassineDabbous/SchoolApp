@@ -16,7 +16,7 @@ class AuthViewController: BaseViewController {
         let lbl = Input()
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.textAlignment = .left
+        //lbl.textAlignment = .left
         return lbl
     }()
     
@@ -25,7 +25,7 @@ class AuthViewController: BaseViewController {
         lbl.isSecureTextEntry = true
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.textAlignment = .left
+        //lbl.textAlignment = .left
         return lbl
     }()
     
@@ -33,7 +33,7 @@ class AuthViewController: BaseViewController {
         let lbl = UILabel()
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.textAlignment = .left
+        //lbl.textAlignment = .left
         return lbl
     }()
     
@@ -58,20 +58,21 @@ class AuthViewController: BaseViewController {
         view.addSubview(registerBtn)
         view.addSubview(recoverBtn)
         
-        emailField.placeholder = "email"
-        passwordField.placeholder = "password"
-        forgetLabel.text = "forgot password?"
-        loginBtn.setTitle("Login", for: .normal)
-        registerBtn.setTitle("Register", for: .normal)
-        recoverBtn.setTitle("Recover", for: .normal)
+        emailField.placeholder = .localized(.Email)
+        passwordField.placeholder = .localized(.Password)
+        forgetLabel.text = .localized(.ForgotPassword)
+        loginBtn.setTitle(.localized(.Login), for: .normal)
+        registerBtn.setTitle(.localized(.Register), for: .normal)
+        recoverBtn.setTitle(.localized(.PasswordReset), for: .normal)
         
+    
         
-        emailField.atTop(of: main, marginTop: 80)
-        passwordField.toBottom(of: emailField, marginTop:40)
-        forgetLabel.toBottom(of: passwordField, marginTop:40)
-        loginBtn.toBottom(of: forgetLabel, marginTop:40)
-        registerBtn.toBottom(of: loginBtn, marginTop:40)
-        recoverBtn.toBottom(of: registerBtn, marginTop:40)
+        recoverBtn.atBottom(of: main, marginBottom:10)
+        forgetLabel.toTop(of: recoverBtn, marginBottom:8)
+        registerBtn.toTop(of: forgetLabel, marginBottom:8)
+        loginBtn.toTop(of: registerBtn, marginBottom:8)
+        passwordField.toTop(of: loginBtn, marginBottom:8)
+        emailField.toTop(of: passwordField, marginBottom:8)
         
         
         
@@ -83,12 +84,14 @@ class AuthViewController: BaseViewController {
         view.addSubview(stack)
         stack.anchor(top: main.topAnchor, leading: main.leadingAnchor, bottom: main.bottomAnchor, trailing: main.trailingAnchor)*/
         
+        view.layoutIfNeeded()
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Login"
+        navigationItem.title = .localized(.Login)
         
         UserDefaults.Account.auth(nil)
         
@@ -99,7 +102,7 @@ class AuthViewController: BaseViewController {
         let email = UserDefaults.Account.string(forKey: .email_hint)
         emailField.text = email
         
-        self.moveWithKeyboard()
+        //self.moveWithKeyboard()
     }
     
     @objc func recover() {

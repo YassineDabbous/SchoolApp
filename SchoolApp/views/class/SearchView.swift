@@ -19,7 +19,7 @@ class SearchView: UIView {
         card = UIView(frame: .zero)
         self.addSubview(card)
         card.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor,
-                    padding: UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4))
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         
         
         let imgView = UIImageView(image: UIImage(named: "magnify"))
@@ -58,7 +58,7 @@ class SearchView: UIView {
         card.clipsToBounds = true
         card.layer.cornerRadius = 4
         
-        searchInput.placeholder = "What do you search?"
+        searchInput.placeholder = .localized(.WhatDoYouSearch)
         
         //card.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
     }

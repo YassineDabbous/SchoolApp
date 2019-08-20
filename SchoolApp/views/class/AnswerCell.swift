@@ -55,7 +55,7 @@ class AnswerCell: GenericTableViewCell<Answer> {
     }
     
     override func bind() {
-        descriptionView.text = item!.postContent
+        descriptionView.attributedText = item!.postContent?.html()
         titleView.text = item!.postTitle
     }
     

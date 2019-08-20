@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 
 extension AppDelegate {
@@ -41,6 +42,8 @@ extension AppDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barTintColor = Utils.appColor
         
+        nvc.hero
+        
         //leftViewController.mainViewController = nvc
         
         //let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
@@ -51,6 +54,8 @@ extension AppDelegate {
         if window == nil {
             window = UIWindow()
         }
+        
+        
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = UIColor(red: 225.0, green: 61, blue: 48, alpha: 1.0)
         self.window?.rootViewController = slideMenuController

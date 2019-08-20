@@ -10,7 +10,7 @@ import UIKit
 
 class Utils {
     
-    public static let app_name:String = "My APP" //.localized(.app_name)
+    public static let app_name:String = .localized(.app_name)
     public static var ads_after = 7
     public static let app_version = 4
     public static let app_id = "id1475668635"
@@ -30,6 +30,9 @@ class Utils {
         Swift.print("\n", vars ,"\n")
     }
     
+    public static let url_privacy = "https://uae-zad.com/­privacy-policy/"
+    
+    
     //public static let server_url = "http://hulul-q8.com/"
     public static let server_url = "http://www.school-q8.com/"
     public static let subjects = server_url+"api/"
@@ -42,7 +45,6 @@ class Utils {
     public static let search_url = server_url+"api/search.php?q="
     public static let print_url = server_url+"print.php?id="
     public static let url_contact = server_url+"index#app"
-    public static let url_privacy = server_url+"privacy.php"
     public static let book_url = server_url+"book.php?do=view&bookID="
     
 }

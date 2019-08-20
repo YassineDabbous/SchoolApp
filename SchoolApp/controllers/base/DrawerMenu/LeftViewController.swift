@@ -13,6 +13,8 @@ struct MenuItem {
     let type:DrawerItem
 }
 enum DrawerItem:String {
+    case solutions = "Solutions"
+    case training = "Training"
     case myQuestions = "My Questions"
     case myAnswers = "My Answers"
     case notifications = "Notifications"
@@ -46,7 +48,7 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
         imgView = UIImageView(image: UIImage(named: "app-logo"))
         view.addSubview(imgView)
         //imgView.anchor(centerX: headerView.centerXAnchor, centerY: headerView.centerYAnchor, size: CGSize(width: 100, height: 100))
-        imgView.anchor(top: headerView.topAnchor, leading: headerView.leadingAnchor, trailing: headerView.trailingAnchor, padding: UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20), size: CGSize(width: 0, height: 80))
+        imgView.anchor(top: headerView.topAnchor, leading: headerView.leadingAnchor, trailing: headerView.trailingAnchor, padding: UIEdgeInsets(top: 20, left: 40, bottom: 0, right: 40), size: CGSize(width: 0, height: 80))
         
         nameView = LabelBold()
         nameView.text = Utils.app_name
@@ -67,7 +69,9 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
         router = LeftDrawerRouter(viewController: mainController)
         initTable(&tableView)
         self.items = [
-            MenuItem(title: "", icon: "lightbulb-on-outline", type: .myQuestions),
+            MenuItem(title: "", icon: "lightbulb-on-outline", type: .solutions),
+            MenuItem(title: "", icon: "android-studio", type: .training),
+            MenuItem(title: "", icon: "comment-question-outline", type: .myQuestions),
             MenuItem(title: "", icon: "file-document-edit-outline", type: .myAnswers),
             MenuItem(title: "", icon: "bell-outline", type: .notifications),
             MenuItem(title: "", icon: "star-outline", type: .rateApp),
@@ -86,6 +90,12 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
         print("on interact child called")
         print(model as Any," -> ", action)
         switch model!.type {
+            case .solutions:
+                router.categories(category: YCategory(id: 89, name: "", termOrder: 0, childNumber: 0, postsNumber: "0"))
+                toggleLeft()
+            case .training:
+                router.categories(category: YCategory(id: 90, name: "", termOrder: 0, childNumber: 0, postsNumber: "0"))
+                toggleLeft()
             case .myQuestions:
                 router.questions()
                 toggleLeft()

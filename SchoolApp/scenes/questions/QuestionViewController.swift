@@ -26,9 +26,10 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         
         
         answerBtn = BtnPrimary(frame: .zero)
-        answerBtn.setTitle("Answer", for: .normal)
+        answerBtn.setTitle(.localized(.Answer), for: .normal)
         view.addSubview(answerBtn)
-        answerBtn.atBottom(of: view, marginBottom: 8)
+        //answerBtn.atBottom(of: view, marginBottom: 8)
+        answerBtn.anchor(leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8))
         
         let scrollView = UIScrollView(frame: .zero)
         self.view.addSubview(scrollView)
@@ -39,12 +40,12 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         drawMainView(scroller: scrollView)
         
         titleView = LabelBold()
-        titleView.text = "Title"
+        titleView.text = .localized(.Title)
         main.addSubview(titleView)
         titleView.anchor(top: main.topAnchor, leading: main.leadingAnchor, trailing: main.trailingAnchor)
         
         descriptionView = LabelRegular()
-        descriptionView.text = "Description"
+        descriptionView.text = .localized(.Description)
         //descriptionView.numberOfLines = 0
         //descriptionView.backgroundColor = .orange
         main.addSubview(descriptionView)
@@ -54,7 +55,7 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         
         
         attachementLabel = LabelBold()
-        attachementLabel.text = "Attachements"
+        attachementLabel.text = .localized(.Attachements)
         main.addSubview(attachementLabel)
         
         let attachementImgView = UIImageView(image: UIImage(named: "file-image-outline"))
@@ -73,7 +74,7 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         
         
         let commentsLabel = LabelBold()
-        commentsLabel.text = "comments"
+        commentsLabel.text = .localized(.Comments)
         main.addSubview(commentsLabel)
         commentsLabel.toBottom(of: attachementStack, marginTop:10)
         //commentsLabel.anchor(top: attachementStack.bottomAnchor, leading: main.leadingAnchor, trailing: main.trailingAnchor)
@@ -81,19 +82,15 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         tableView = SelfSizedTableView()
         main.addSubview(tableView)
         tableView.anchor(top: commentsLabel.bottomAnchor, leading: main.leadingAnchor, trailing: main.trailingAnchor)
+        tableView.bottomAnchor.constraint(equalTo: main.bottomAnchor).isActive = true
         
         
-        
-        
-        /*main.backgroundColor = .green
-        self.scrollView.backgroundColor = .red
-        tableView.backgroundColor = .blue*/
     }
     
     
     @objc func showAttachements() {
         print("selectStockStaus")
-        let homeViewController = GenericTableViewController(source: urls, title: .localized(.available), dismissOnClick: true)
+        let homeViewController = GenericTableViewController(source: urls, title: .localized(.Attachements), dismissOnClick: true)
         homeViewController.didSelect = { item in
             self.router.present(safari: item)
         }
@@ -107,19 +104,18 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         super.viewDidLoad()
         
         
-        navigationItem.title = "Question"
+        navigationItem.title = .localized(.Questions)
         
         answerBtn.addTarget(self, action: #selector(addAnswer), for: .touchUpInside)
         
         initTable(&tableView, 80)
         refreshData()
         
-
-        fitScroller()
+        //fitScroller()
     }
     
     override func refreshData() {
-        if question.postTitle!.elementsEqual("") {
+        if question.postTitle == nil || question.postTitle!.elementsEqual("") {
             perform(APIClient.question(id: question.id!)){ success, data in
                 if success, let d = data {
                     self.question = d
@@ -141,6 +137,9 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
         titleView.text = question.postTitle
         descriptionView.text = question.postContent!.html().string
         
+        print("el Title =>", question.postTitle)
+        print("el Title =>", titleView.text)
+        
         let input = question.postContent ?? ""
         let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
@@ -152,7 +151,8 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
             urls.append("\(url)")
         }
         print("urls count", urls.count)
-        attachementLabel.text = "Attachements (\(urls.count))"
+        let att:String = .localized(.Attachements)
+        attachementLabel.text = "\(att) (\(urls.count))"
         dump(urls)
     }
     
@@ -164,7 +164,7 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
     
 
     @objc func addAnswer(){
-        Alerts.showAlertInput(vc: self, title: "Answer", contentType: .addressCity, placeholder: "Enter your answer") { (answer) in
+        Alerts.showAlertInput(vc: self, title: .localized(.Answer), contentType: .addressCity, placeholder: .localized(.EnterYourAnswer)) { (answer) in
             self.saveMe(answer: answer)
         }
     }
@@ -174,7 +174,7 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
             if success, let d = data {
                 self.items?.append(d)
                 self.tableView.reloadData()
-                Alerts.showAlert(vc: self, title: "done", message: "added with success") {}
+                Alerts.ok(vc: self)
             }
         }
     }

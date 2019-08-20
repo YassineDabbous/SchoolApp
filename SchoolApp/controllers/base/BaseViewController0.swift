@@ -24,38 +24,28 @@ class BaseViewController: MainViewController {
             if scroller==nil{
                 scrollView = UIScrollView(frame: .zero)
                 self.view.addSubview(scrollView)
-                 scrollView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
+                 scrollView.fill(parent: view)
             } else {
                 scrollView = scroller
             }
             
-            /*self.scroller.addSubview(main)
-            main.anchor(top: scroller.topAnchor, leading: scroller.leadingAnchor, trailing: scroller.trailingAnchor)*/
-            main.translatesAutoresizingMaskIntoConstraints = false
-            scrollView.addSubview(main)
-            main.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-            main.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-            main.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            main.heightAnchor.constraint(equalToConstant: 1000).isActive = true
-            let bottomMostView = UIView(frame: .zero)
-            //scrollView.backgroundColor = .yellow
-            bottomMostView.translatesAutoresizingMaskIntoConstraints = false
-            scrollView.addSubview(bottomMostView)
-            bottomMostView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-            bottomMostView.topAnchor.constraint(equalTo: main.bottomAnchor).isActive = true
-            bottomMostView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            bottomMostView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-            bottomMostView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+            scrollView.setAsContentView(&main)
+            
         } else {
             self.view.addSubview(main)
             main.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
         }
-        main.addDashedBorder()
     }
     func fitScroller(){
         
         
+        print("size for main realSizee ", main.realSize())
+        print("size for main sizee", main.frame.size)
+        print("size for main intrinsicContentSize", main.intrinsicContentSize)
+        print("size for scroller ", scrollView.contentSize)
+        
         scrollView.fitToSize(of: main)
+        view.layoutIfNeeded()
         
         print("size for main realSizee ", main.realSize())
         print("size for main sizee", main.frame.size)

@@ -13,6 +13,15 @@ extension UIScrollView {
     func fitToSize(of card:UIView){
         self.contentSize = card.realSize()
     }
+    
+    func setAsContentView(_ main:inout UIView){
+        addSubview(main)
+        main.translatesAutoresizingMaskIntoConstraints = false
+        main.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        main.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        main.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        main.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
 }
 extension UIView {
     

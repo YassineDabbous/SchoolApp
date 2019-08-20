@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  SchoolApp
+
+  Created by X on 8/19/19.
+  Copyright © 2019 X. All rights reserved.
+*/
+
+"app_name" = "SchoolApp";
+
+"Ok" = "Ok";
+"None" = "None";
+"Done" = "Done";
+
+"Edit" = "Edit";
+"Alert" = "Alert";
+"Error" = "Error";
+"Please wait..." = "Please wait...";
+"Are you sure?" = "Are you sure?";
+
+"Change Password" = "Change Password";
+
+"Fetching New Data ..." = "Fetching New Data ...";
+"No Data, pull down to refresh or try again later" = "No Data, pull down to refresh or try again later";
+"What do you search" = "What do you search?";
+
+"Solutions" = "Solutions";
+"Training" = "Training";
+"My Questions" = "My Questions";
+"My Answers" = "My Answers";
+"Notifications" = "Notifications";
+"Rate App" = "Rate App";
+"Contact us" = "Contact us";
+"Share App" = "Share App";
+"Privacy" = "Privacy";
+"Logout" = "Logout";
+
+
+"Categories"="Categories";
+"Files"="Files";
+"File"="File";
+"Questions"="Questions";
+"AddQuestion"="Add New Question";
+"Answers"="Answers";
+"Comments"="Comments";
+"Attachements"="Attachements";
+"Login"="Login";
+"Register"="Register";
+"PasswordReset"="Password Reset";
+
+"AddAttachement" = "Add Attachement";
+
+"Title" = "Title";
+"Description" = "Description";
+"Email" = "Email";
+"Name" = "Name";
+"Password" = "Password";
+"PasswordConfirmation" = "Password Confirmation";
+"Confirm" = "Confirm";
+"ForgotPassword" = "Forgot Password?";
+"QuestionTitle" = "Question Title";
+"QuestionDescription" = "Question Description";
+"UploadingFile" = "Uploading File";
+"Answer" = "Answer";
+"Answered" = "Answered";
+"NotAnswered" = "Not Answered";
+"EnterYourAnswer" = "Enter Your Answer";
+

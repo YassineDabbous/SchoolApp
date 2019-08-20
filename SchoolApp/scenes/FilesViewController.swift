@@ -47,7 +47,7 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Files"
+        navigationItem.title = .localized(.Files)
         
         tableView.backgroundColor = .white
         initTable(&tableView)
@@ -55,9 +55,13 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
     }
     
     override func refreshData() {
+        self.showIndicator()
+        print("searchFor =", searchFor)
+        print("category =", category)
         if let category = category {
             headerView.titleView.text = category.name
             self.perform(APIClient.getPosts(id: category.id!)){ success, data in
+                self.hideIndicator()
                 if let d = data {
                     self.items = d
                     self.tableView.animateTable()
@@ -72,6 +76,7 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
         }else if searchFor != "" {
             headerView.titleView.text = "بحث عن "+self.searchFor
             self.perform(APIClient.search(word: searchFor)){ success, data in
+                self.hideIndicator()
                 if let d = data {
                     self.items = d
                     self.tableView.animateTable()

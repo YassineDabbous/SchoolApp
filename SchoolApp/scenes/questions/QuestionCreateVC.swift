@@ -44,11 +44,11 @@ class QuestionCreateVC: BaseViewController {
         view.addSubview(iv)
         
         
-        titleInput.placeholder = "title"
-        titleView.text = "Question Title"
-        descriptionView.text = "Question description"
-        attachementLabel.text = "Add Attachement"
-        answerBtn.setTitle("Save Question", for: .normal)
+        titleInput.placeholder = .localized(.Title)
+        titleView.text = .localized(.QuestionTitle)
+        descriptionView.text = .localized(.QuestionDescription)
+        attachementLabel.text = .localized(.AddAttachement)
+        answerBtn.setTitle(.localized(.Save), for: .normal)
         
         
         titleView.anchor(top: main.topAnchor, leading: main.leadingAnchor, trailing: main.trailingAnchor)
@@ -65,7 +65,7 @@ class QuestionCreateVC: BaseViewController {
         view.addSubview(attachementStack)
         
         attachementImgView.anchor(size: CGSize(width: 24, height: 24))
-        attachementStack.toBottom(of: descriptionInput, height: 40, marginTop: 10)
+        attachementStack.toBottom(of: descriptionInput, height: 30, marginTop: 10)
         attachementStack.makeDashedBorderLine()
         
         answerBtn.anchor(leading: main.leadingAnchor, bottom:main.bottomAnchor, trailing: main.trailingAnchor)
@@ -80,7 +80,7 @@ class QuestionCreateVC: BaseViewController {
     var imagePicker: ImagePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Add new Question"
+        navigationItem.title = .localized(.AddQuestion)
         answerBtn.addTarget(self, action: #selector(saveMe), for: .touchUpInside)
         let tapAttachment = UITapGestureRecognizer(target: self, action: #selector(pick))
         attachementStack.addGestureRecognizer(tapAttachment)
@@ -100,7 +100,7 @@ class QuestionCreateVC: BaseViewController {
         let d = "\(t) \(imgSrc)"
         perform(APIClient.ask(request: QuestionRequest(title: titleInput.text, description: d, parent: "", uid: "\(me)"))){ success, data in
             if success, let d = data {
-                Alerts.showAlert(vc: self, title: "done", message: "added with success") {
+                Alerts.showAlert(vc: self, title: .localized(.done), message: "") {
                     self.router.question(question: d)
                 }
             }
@@ -153,8 +153,8 @@ extension QuestionCreateVC: ImagePickerDelegate {
     }
     func showProgress(){
         //  Just create your alert as usual:
-        alertView = UIAlertController(title: "Please wait", message: "Need to download some files.", preferredStyle: .alert)
-        alertView.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertView = UIAlertController(title: .localized(.msgWait), message: .localized(.UploadingFile), preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: .localized(.Cancel), style: .cancel, handler: nil))
         
         //  Show it to your users
         present(alertView, animated: true, completion: {

@@ -28,6 +28,7 @@ extension AppRoutable{
     func search(word:String) {
         show(destination: FilesViewController()){ controller in
             controller.searchFor = word
+            print("go to search for", controller.searchFor)
         }
     }
     

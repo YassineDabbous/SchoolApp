@@ -30,6 +30,8 @@ class RegisterViewController: BaseViewController {
         emailField = Input(frame: .zero)
         passwordField = Input(frame: .zero)
         passwordConfirmationField = Input(frame: .zero)
+        passwordField.isSecureTextEntry = true
+        passwordField.isSecureTextEntry = true
         
         
         view.addSubview(emailField)
@@ -38,18 +40,27 @@ class RegisterViewController: BaseViewController {
         view.addSubview(passwordConfirmationField)
         view.addSubview(registerBtn)
         
-        firstnameField.placeholder = "Name"
-        emailField.placeholder = "email"
-        passwordField.placeholder = "password"
-        passwordConfirmationField.placeholder = "password Confirmation"
-        registerBtn.setTitle("Register", for: .normal)
+        firstnameField.placeholder = .localized(.Name)
+        emailField.placeholder = .localized(.Email)
+        passwordField.placeholder = .localized(.Password)
+        passwordConfirmationField.placeholder = .localized(.PasswordConfirmation)
+        registerBtn.setTitle(.localized(.Register), for: .normal)
         
         
-        firstnameField.atTop(of: main, marginTop: 80)
+        /*firstnameField.atTop(of: main, marginTop: 80)
         emailField.toBottom(of: firstnameField, marginTop:40)
         passwordField.toBottom(of: emailField, marginTop:40)
         passwordConfirmationField.toBottom(of: passwordField, marginTop:40)
-        registerBtn.toBottom(of: passwordConfirmationField, marginTop:40)
+        registerBtn.toBottom(of: passwordConfirmationField, marginTop:40)*/
+        
+        
+        registerBtn.atBottom(of: main, marginBottom:10)
+        passwordConfirmationField.toTop(of: registerBtn, marginBottom:20)
+        passwordField.toTop(of: passwordConfirmationField, marginBottom:8)
+        emailField.toTop(of: passwordField, marginBottom:8)
+        firstnameField.toTop(of: emailField, marginBottom:8)
+        
+        
         /*let stack = UIStackView(arrangedSubviews: [firstnameField, emailField, passwordField , passwordConfirmationField, registerBtn])
         stack.alignment = .center
         stack.distribution = .equalSpacing
@@ -77,7 +88,7 @@ class RegisterViewController: BaseViewController {
                 }
             }
         } else {
-            Alerts.showAlert(vc: self, title: .localized(.Error), message: .localized(.changePassword)) {
+            Alerts.showAlert(vc: self, title: .localized(.Error), message: .localized(.msgConfirmation)) {
                 
             }
         }
@@ -86,10 +97,12 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Register"
+        navigationItem.title = .localized(.Register)
         addBackbtn()
         
         registerBtn.addTarget(self, action: #selector(registerMe), for: .touchUpInside)
+        view.layoutIfNeeded()
+        //self.moveWithKeyboard()
     }
 
 }

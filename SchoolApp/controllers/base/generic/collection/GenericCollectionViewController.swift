@@ -198,10 +198,13 @@ class GenericCollectionViewController<CELL: GenericCollectionViewCell<MODEL>, CE
         refreshControl?.endRefreshing()
     }
     
-    override func handleError(_ error: Error) {
-        super.handleError(error)
+    
+    override func onResponseHandled(_ success: Bool) {
+        super.onResponseHandled(success)
+        print("Success \(success) handled in child generic")
         refreshControl?.endRefreshing()
     }
+    
     
     
     

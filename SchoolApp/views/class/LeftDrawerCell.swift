@@ -35,7 +35,7 @@ class LeftDrawerCell: GenericTableViewCell<MenuItem> {
     }
     
     override func bind(){
-        titleView.text = item!.type.rawValue
+        titleView.text = NSLocalizedString(item!.type.rawValue, comment: item!.type.rawValue)
         imgView.image = UIImage(named: item!.icon)
     }
 }

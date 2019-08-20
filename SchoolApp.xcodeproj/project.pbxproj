@@ -160,6 +160,7 @@
 		178CB69C22DB50DC008762EB /* ListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB69B22DB50DC008762EB /* ListCategoryCell.swift */; };
 		178CB69E22DC91DA008762EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB69D22DC91DA008762EB /* QuestionViewController.swift */; };
 		178CB6A122DC9226008762EB /* QuestionCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB6A022DC9226008762EB /* QuestionCreateVC.swift */; };
+		17BE3D94230AD3B100E789BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17BE3D96230AD3B100E789BC /* Localizable.strings */; };
 		533450A6D92E05236200A6EE /* Pods_SchoolAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E738B56DA7F822F07EA165C3 /* Pods_SchoolAppTests.framework */; };
 		95A3099C85F85C0845B2A2EC /* Pods_SchoolApp_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BFE7BDAABF4E63B4FDB3E5 /* Pods_SchoolApp_OneSignalNotificationServiceExtension.framework */; };
 		D9DBDFDE9B37AB18EA64F408 /* Pods_SchoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB75B3490571AB04E715845 /* Pods_SchoolApp.framework */; };
@@ -366,6 +367,8 @@
 		178CB69D22DC91DA008762EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		178CB6A022DC9226008762EB /* QuestionCreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCreateVC.swift; sourceTree = "<group>"; };
 		17A99B204363F4505D3FD6A7 /* Pods-SchoolAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SchoolAppUITests/Pods-SchoolAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		17BE3D95230AD3B100E789BC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17BE3D97230AD3BD00E789BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22F670F9FA058092198E1720 /* Pods-SchoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.debug.xcconfig"; path = "Target Support Files/Pods-SchoolApp/Pods-SchoolApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2F2F3CEA8C6DB30BE4083ACA /* Pods-SchoolAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SchoolAppUITests/Pods-SchoolAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D989DD47A1861C8CD7A94F4 /* Pods-SchoolAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolAppTests.release.xcconfig"; path = "Target Support Files/Pods-SchoolAppTests/Pods-SchoolAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -803,6 +806,7 @@
 		178CB57622D7367B008762EB /* localisation */ = {
 			isa = PBXGroup;
 			children = (
+				17BE3D96230AD3B100E789BC /* Localizable.strings */,
 			);
 			path = localisation;
 			sourceTree = "<group>";
@@ -1115,6 +1119,7 @@
 				178CB67822D799F6008762EB /* BannersViewForTable.xib in Resources */,
 				178CB61D22D7367B008762EB /* Cairo-Light.ttf in Resources */,
 				178CB47B22D73334008762EB /* Main.storyboard in Resources */,
+				17BE3D94230AD3B100E789BC /* Localizable.strings in Resources */,
 				178CB66F22D799F6008762EB /* Toolbar.xib in Resources */,
 				178CB67622D799F6008762EB /* BannersView.xib in Resources */,
 				178CB67522D799F6008762EB /* NotificationCell.xib in Resources */,
@@ -1154,6 +1159,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SchoolApp/Pods-SchoolApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialShowcase/MaterialShowcase.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -1167,6 +1174,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialShowcase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -1463,6 +1472,15 @@
 				178CB48222D7333F008762EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		17BE3D96230AD3B100E789BC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17BE3D95230AD3B100E789BC /* ar */,
+				17BE3D97230AD3BD00E789BC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

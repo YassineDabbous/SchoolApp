@@ -117,11 +117,11 @@ class WithGenericTableView<CELL: GenericTableViewCell<MODEL>, MODEL>: BaseViewCo
     
     
     
-    override func handleError(_ error: Error) {
-        super.handleError(error)
+    override func onResponseHandled(_ success: Bool) {
+        super.onResponseHandled(success)
+        print("Success \(success) handled in child generic")
         refreshControl?.endRefreshing()
     }
-    
     
     
     /**

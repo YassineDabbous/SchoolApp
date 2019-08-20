@@ -51,10 +51,10 @@ class QuestionCell: GenericTableViewCell<Question> {
     
     override func bind() {
         if item!.commentStatus!.elementsEqual("open") {
-            answeredLabel.text = "Not Answered"
+            answeredLabel.text = .localized(.NotAnswered)
             answeredLabel.backgroundColor = .red
         } else {
-            answeredLabel.text = "Answered"
+            answeredLabel.text = .localized(.Answered)
             answeredLabel.backgroundColor = .green
         }
         titleView.text = item!.postTitle

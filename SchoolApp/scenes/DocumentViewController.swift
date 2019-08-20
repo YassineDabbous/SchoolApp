@@ -31,7 +31,7 @@ class DocumentViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        navigationItem.title = "Document"
+        navigationItem.title = .localized(.File)
         print("loadViewwwwwwwwwwwwwwww")
         
         drawMainView()
@@ -55,17 +55,16 @@ class DocumentViewController: BaseViewController {
         //webView.browser.navigationDelegate = self
         //webView.browser.allowsBackForwardNavigationGestures = true
         
+        let elUrl = file.youtubeURL ?? file.docURL ?? Utils.server_url
+        let url = URL(string: elUrl)!
         
-        let url = URL(string: file.docURL ?? Utils.server_url)!
-        
-        if file.docURL!.contains("youtube") {
+        if elUrl.contains("youtube") {
             let videoPlayer = YouTubePlayerView(frame: .zero)
             self.main.addSubview(videoPlayer)
             videoPlayer.fill(parent: main)
             //videoPlayer.anchor(top: headerView.bottomAnchor, leading: main.leadingAnchor, bottom: main.bottomAnchor, trailing: main.trailingAnchor, padding: UIEdgeInsets(top: 4, left: 4, bottom: 50, right: 4))
             videoPlayer.loadVideoURL(url)
-            
-            
+            //videoPlayer.delegate
         } else {
             let webView:Browser! = Browser(frame: .zero)
             self.main.addSubview(webView)

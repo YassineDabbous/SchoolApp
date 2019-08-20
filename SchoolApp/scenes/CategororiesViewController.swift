@@ -69,7 +69,7 @@ class CategororiesViewController: GenericCollection , UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         isInitial = true
-        navigationItem.title = "Categories"
+        navigationItem.title = .localized(.Categories)
         main.backgroundColor = .white
         search.backgroundColor = .white
         myCollectionView.backgroundColor = .white
@@ -121,8 +121,10 @@ class CategororiesViewController: GenericCollection , UITextFieldDelegate {
     }
     
     override func refreshData() {
+        showIndicator()
         if let category = category {
             self.perform(APIClient.getSubCategories(id: category.id!)){ success, data in
+                self.hideIndicator()
                 if let d = data {
                     self.items = d
                     self.myCollectionView.reloadData()
@@ -131,6 +133,7 @@ class CategororiesViewController: GenericCollection , UITextFieldDelegate {
             }
         } else {
             self.perform(APIClient.getCategories()){ success, data in
+                self.hideIndicator()
                 if let d = data {
                     self.items = d
                     self.myCollectionView.reloadData()

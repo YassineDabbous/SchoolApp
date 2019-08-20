@@ -8,16 +8,15 @@
 
 import Foundation
 struct RegisterRequest: Codable {
-    let firstname, email, password: String
-    init(firstname:String,
-        email:String,
-        password:String){
-        self.firstname = firstname
+    let name, email, password: String
+    
+    init(firstname:String, email:String, password:String){
+        self.name = firstname
         self.email = email
         self.password = password
         
     }
     enum CodingKeys: String, CodingKey {
-        case password, firstname, email
+        case password, name, email
     }
 }

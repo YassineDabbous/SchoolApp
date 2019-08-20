@@ -30,7 +30,7 @@ class NotificationsViewController: WithGenericTableView<NotificationCell, YNotif
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Notifications"
+        navigationItem.title = .localized(.Notifications)
         
         initTable(&tableView, 60)
         

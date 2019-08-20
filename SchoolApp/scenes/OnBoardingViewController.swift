@@ -26,7 +26,7 @@ class OnBoardingViewController: BaseViewController {
         swiftyOnboard.style = .light
         swiftyOnboard.delegate = self
         swiftyOnboard.dataSource = self
-        swiftyOnboard.backgroundColor = UIColor(red: 46/256, green: 46/256, blue: 76/256, alpha: 1)
+        swiftyOnboard.backgroundColor = Utils.appColor //UIColor(red: 46/256, green: 46/256, blue: 76/256, alpha: 1)
     }
     
     @objc func handleSkip() {
@@ -54,16 +54,16 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         view.imageView.image = UIImage(named: "app-logo")
         if index == 0 {
             //On the first page, change the text in the labels to say the following:
-            view.title.text = "Planet earth is extraordinary"
-            view.subTitle.text = "Earth, otherwise known as the World, is the third planet from the Sun."
+            view.title.text = "المكتبة التعليمة"
+            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
         } else if index == 1 {
             //On the second page, change the text in the labels to say the following:
-            view.title.text = "The mystery of\n outer space"
-            view.subTitle.text = "Outer space or just space, is the void that exists between celestial bodies, including Earth."
+            view.title.text = "ملفات و فيديوهات"
+            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
         } else {
             //On the thrid page, change the text in the labels to say the following:
-            view.title.text = "Extraterrestrial\n life"
-            view.subTitle.text = "Extraterrestrial life, also called alien life, is life that does not originate from Earth."
+            view.title.text = "أسئلة و أجوبة"
+            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
         }
         return view
     }

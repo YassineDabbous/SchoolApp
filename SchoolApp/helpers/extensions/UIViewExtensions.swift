@@ -81,11 +81,12 @@ extension UIView {
     /*
      ** outside the view, under it
      */
-    func toTop(of:UIView, equalWidth to:UIView? = nil, size: CGSize = .zero){
+    func toTop(of:UIView, equalWidth to:UIView? = nil, size: CGSize = .zero, marginBottom: CGFloat = 0){
+        let m = UIEdgeInsets(top: 0, left: 0, bottom: marginBottom, right: 0)
         if to == nil {
-            anchor(leading: of.leadingAnchor, bottom: of.topAnchor, trailing: of.trailingAnchor, size:size)
+            anchor(leading: of.leadingAnchor, bottom: of.topAnchor, trailing: of.trailingAnchor, padding: m, size:size)
         }else{
-            anchor(leading: to!.leadingAnchor, bottom: of.topAnchor, trailing: to!.trailingAnchor, size:size)
+            anchor(leading: to!.leadingAnchor, bottom: of.topAnchor, trailing: to!.trailingAnchor, padding: m, size:size)
         }
     }
     

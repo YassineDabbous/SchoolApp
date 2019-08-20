@@ -53,8 +53,8 @@ enum PostsEndpoint: APIConfiguration {
                 return "/posts/\(id)"
             case .post(let id):
                 return "/posts/\(id)"
-            case .search(let word):
-                return "search?q=\(word)"
+            case .search:
+                return "search"
 
         }
     }
@@ -68,8 +68,8 @@ enum PostsEndpoint: APIConfiguration {
                 return nil
             case .post:
                 return nil
-            case .search:
-                return nil
+            case .search(let word):
+                return [K.APIParameterKey.q: word]
         }
     }
     

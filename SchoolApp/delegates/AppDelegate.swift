@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMobileAds
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             setDrawerMenu()
         }
+        
+        IQKeyboardManager.shared.enable = true
         
         //GADMobileAds.configure(withApplicationID: Utils.initialize)
         // initialized in plist.info

@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  SchoolApp
+
+  Created by X on 8/19/19.
+  Copyright © 2019 X. All rights reserved.
+*/
+
+"app_name" = "تطبيق المدرسة";
+
+"Ok" = "حسنا";
+"None" = "لا";
+"Done" = "تم";
+
+"Edit" = "تعديل";
+"Alert" = "تنبيه";
+"Error" = "خطأ";
+"Please wait..." = "إنتظر رجاءا...";
+"Are you sure?" = "هل أنت متأكد؟";
+
+"Change Password" = "تغيير كلمة المرور";
+
+
+"Fetching New Data ..." = "تحديث البيانات ...";
+"No Data, pull down to refresh or try again later" = "لا يوجد بيانات، إسحب للأسفل للتحديث أو أعد المحاولة لاحقا";
+"What do you search" = "عن ماذا تبحث ؟";
+
+
+"Solutions" = "حلول الكتب";
+"Training" = "تدريبات ومراجعات";
+"My Questions" = "الأسئلة";
+"My Answers" = "أجوبتي";
+"Notifications" = "التنبيهات";
+"Rate App" = "تقييم";
+"Contact us" = "إتصل بنا";
+"Share App" = "نشر التطبيق";
+"Privacy" = "الخصوصية";
+"Logout" = "تسجيل الخروج";
+
+
+"Categories"="الأقسام";
+"Files"="الملفات";
+"File"="الملف";
+"Questions"="الأسئلة";
+"AddQuestion"="أضف سؤالا جديدا";
+"Answers"="الأجوبة";
+"Comments"="التعليقات";
+"Attachements"="المرفقات";
+"Login"="تسجيل الدخول";
+"Register"="حساب جديد";
+"PasswordReset"="إعادة تعيين كلمة المرور";
+
+
+"AddAttachement" = "إضافة صورة";
+
+"Title" = "العنوان";
+"Description" =  "الوصف";
+"Email" = "البريد الإلكتروني";
+"Name" = "إسم المستخدم";
+"Password" = "كلمة المرور";
+"PasswordConfirmation" = "تأكيد كلمة المرور";
+"Confirm" = "تأكيد";
+"ForgotPassword" = "هل نسيت كلمة المرور؟";
+"QuestionTitle" = "عنوان السؤال";
+"QuestionDescription" = "وصف السؤال";
+"UploadingFile" = "جاري رفع الملف ...";
+"Answer" = "أجب";
+"Answered" = "مجاب";
+"NotAnswered" = "غير مجاب";
+"EnterYourAnswer" = "أدخل إجابتك";

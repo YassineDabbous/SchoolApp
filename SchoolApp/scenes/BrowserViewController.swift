@@ -24,13 +24,13 @@ class BrowserViewController: BaseViewController {
         webView.fill(parent: main)
         
         
-        print("viewwwwwwwwwwwwww loaded")
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("url is", url)
         let urll = URL(string: url)!
         webView.browser.loadRequest(URLRequest(url: urll))
         

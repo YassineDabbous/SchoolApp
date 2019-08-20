@@ -11,6 +11,9 @@ target 'SchoolApp' do
 	pod 'Google-Mobile-Ads-SDK'
 	pod 'OneSignal', '>= 2.6.2', '< 3.0'
 
+	pod 'IQKeyboardManagerSwift'
+	pod "Hero"
+
 	pod 'YouTubePlayer'
 
 	pod 'SwiftyOnboard'

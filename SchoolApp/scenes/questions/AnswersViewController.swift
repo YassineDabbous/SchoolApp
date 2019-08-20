@@ -30,7 +30,7 @@ class AnswersViewController: WithGenericTableView<AnswerCell, Answer> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "My Answers"
+        navigationItem.title = .localized(.Answers)
         
         initTable(&tableView, 100)
         refreshData()

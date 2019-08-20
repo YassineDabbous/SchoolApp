@@ -39,7 +39,7 @@ class QuestionsViewController: WithGenericTableView<QuestionCell, Question> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Questions"
+        navigationItem.title = .localized(.Questions)
         
         initTable(&tableView, 70)
         refreshData()

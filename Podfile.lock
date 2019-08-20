@@ -24,6 +24,8 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.5.0)"
   - GoogleUtilities/Reachability (5.5.0):
     - GoogleUtilities/Logger
+  - Hero (1.4.0)
+  - IQKeyboardManagerSwift (6.2.1)
   - Kingfisher (5.3.1)
   - MaterialShowcase (0.6.5)
   - nanopb (0.3.901):
@@ -47,6 +49,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.4)
   - Google-Mobile-Ads-SDK
+  - Hero
+  - IQKeyboardManagerSwift
   - Kingfisher (~> 5.3.1)
   - MaterialShowcase
   - OneSignal (< 3.0, >= 2.6.2)
@@ -60,6 +64,8 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - Hero
+    - IQKeyboardManagerSwift
     - Kingfisher
     - MaterialShowcase
     - nanopb
@@ -73,6 +79,8 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 8f4f7e793bfd3fff5b082181b54112f81b579a67
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   MaterialShowcase: 031041c8409ab8473740a13e8c37297f78316e96
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -81,6 +89,6 @@ SPEC CHECKSUMS:
   SwiftyOnboard: de60e90c2af23dd61b01ec0c6a8d0be3370f857b
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: e67d7bbe03163081dd895033cabf8b90d573c78b
+PODFILE CHECKSUM: 55cf3ad998c61f8d51595e0c9109c76b4d966a06
 
 COCOAPODS: 1.6.1

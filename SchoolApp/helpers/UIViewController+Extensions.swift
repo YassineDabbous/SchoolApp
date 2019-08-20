@@ -15,13 +15,17 @@ extension UIViewController {
     
     func perform<D, T:Promise<BaseResponse<D>>>(_ request:T, _ completion: @escaping (Bool, D?)  -> Void){
         request.done{ data in
-            self.handleSuccess(data)
-            completion(data.success, data.data?.getData())
-            }.catch { error in
+                self.handleSuccess(data)
+                completion(data.success, data.data?.getData())
+            self.onResponseHandled(true)
+        }.catch { error in
                 self.handleError(error)
                 completion(false, nil)
+            self.onResponseHandled(false)
         }
     }
+    
+    @objc func onResponseHandled(_ success:Bool){}
     
     func handleSuccess<T:Decodable>(_ response:BaseResponse<T>){
         if let errors = response.error , errors.count > 0 {
@@ -29,6 +33,10 @@ extension UIViewController {
                 Alerts.showMultiAlert(vc: self, title: .localized(.Error), message: e){
                 }
                 //Toast.show(message: e, controller: self)
+            }
+        }
+        if let msg = response.message, !msg.elementsEqual("") {
+            Alerts.showAlert(vc: self, title: .localized(.Alert), message: msg){
             }
         }
     }
