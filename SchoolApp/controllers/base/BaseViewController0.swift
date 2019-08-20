@@ -16,6 +16,16 @@ class BaseViewController: MainViewController {
     var main: UIView = UIView(frame: .zero)
     var scrollView : UIScrollView!
     var isScrollable = false
+    
+    
+    func safeArea() -> UILayoutGuide {
+        if #available(iOS 11.0, *) {
+            return view!.safeAreaLayoutGuide
+        } else {
+            return view!.layoutMarginsGuide
+        }
+    }
+    
     func drawMainView(scroller : UIScrollView? = nil){
         // This will fix the view from being framed underneath the navigation bar and status bar.
         self.navigationController?.navigationBar.isTranslucent = false
@@ -33,7 +43,7 @@ class BaseViewController: MainViewController {
             
         } else {
             self.view.addSubview(main)
-            main.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
+            main.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 4, left: 4, bottom: (supportAds ? 52 : 4), right: 4))
         }
     }
     func fitScroller(){
@@ -55,6 +65,7 @@ class BaseViewController: MainViewController {
     
     
     // proprieties
+    var supportAds = true
     public static var interstitialView: GADInterstitial!
     var bannerView: GADBannerView!
     
@@ -65,37 +76,39 @@ class BaseViewController: MainViewController {
     public static var admob_interstitial_pages:Int = 3;
     public static var admob_interstitial_clicks:Int = 6;
 
-    func safeArea() -> UILayoutGuide {
-        if #available(iOS 11.0, *) {
-            return view!.safeAreaLayoutGuide
-        } else {
-            return view!.layoutMarginsGuide
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //self.moveWithKeyboard()
         self.hideKeyboardWhenTappedAround()
         
-        
-        let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "admob_activation") {
+        //UserDefaults.standard.set(true, forKey: "admob_activation")
+        //let defaults = UserDefaults.standard
+        if supportAds { //defaults.bool(forKey: "admob_activation")
             if BaseViewController.interstitialView == nil {
                 createAd()
             }
             showInterstitial()
+            showBannerAd()
         }
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        view.isHidden = false // to Solve Nested Window problem (previous vc appear behind the new one)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.isHidden = true // to Solve Nested Window problem (previous vc appear behind the new one)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //self.view.endEditing(true)
     }
+    
+    
+    
+    
     
     // <Loader>
     

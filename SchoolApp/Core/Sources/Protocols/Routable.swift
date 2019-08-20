@@ -171,6 +171,7 @@ fileprivate enum RoutingLogic {
         present(delegate: delegate, destination: controller, animated: animated, modalPresentationStyle: modalPresentationStyle, modalTransitionStyle:modalTransitionStyle , configure: configure, completion: completion)
     }
     
+    
     static func show<T: UIViewController>(delegate: UIViewController, storyboard: String, identifier: String? = nil, configure: ((T) -> Void)? = nil) {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         
@@ -192,6 +193,15 @@ fileprivate enum RoutingLogic {
         
         showDetailViewController(delegate: delegate, destination: controller, configure:configure)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -220,5 +230,4 @@ fileprivate enum RoutingLogic {
             completion?(destination)
         }
     }
-    
 }

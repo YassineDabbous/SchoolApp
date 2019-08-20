@@ -55,7 +55,7 @@ class WelcomeViewController: BaseViewController {
         view.addSubview(catsBtn)
         view.addSubview(authBtn)
         
-        imgView.anchor(top: main.topAnchor, leading: main.leadingAnchor,trailing: main.trailingAnchor, padding: UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10), size: CGSize(width: 100, height: 80))
+        imgView.anchor(top: main.topAnchor, leading: main.leadingAnchor,trailing: main.trailingAnchor, padding: UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10), size: CGSize(width: 0, height: 90))
         titleView.toBottom(of: imgView, marginTop:40)
         descriptionView.toBottom(of: titleView, marginTop:20)
         catsBtn.toBottom(of: descriptionView, marginTop:30)

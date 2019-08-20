@@ -24,6 +24,7 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
     override func loadView() {
         super.loadView()
         
+        supportAds = false
         
         answerBtn = BtnPrimary(frame: .zero)
         answerBtn.setTitle(.localized(.Answer), for: .normal)

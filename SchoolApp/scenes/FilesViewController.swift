@@ -18,13 +18,11 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
     var headerView:HeaderView!
     
     public var category:YCategory?
-    
     public var searchFor:String = ""
-    //DB_FEATURE public var db:Db = Db()
+    
     override func loadView() {
         super.loadView()
         
-        print("loadViewwwwwwwwwwwwwwww")
         
         drawMainView()
         
@@ -40,8 +38,6 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
                          bottom: main.bottomAnchor, trailing: main.trailingAnchor,
                          padding: UIEdgeInsets(top: 4, left: 4, bottom: 50, right: 4))
         
-        
-        print("viewwwwwwwwwwwwww loaded")
     }
     
     
@@ -89,51 +85,4 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
         print(model?.postTitle)
         router.document(file: model!)
     }
-}
-//        let item:YSubject = items[indexPath.row]
-extension FilesViewController {
-    /*func tablesView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let s = self.items.count
-        return s + (s / Utils.ads_after)
-    }
-    
-    func tablesView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row >= Utils.ads_after && (indexPath.row % Utils.ads_after) == 0 {
-            return tableView.getAdmobCell(root: self)
-        }else{
-            var position = indexPath.row
-            if position >= Utils.ads_after {
-                position = position - (position/Utils.ads_after)
-            }
-            let cell:BookCell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookCell
-            let item = self.items[position]
-            cell.backgroundColor = UIColor.clear
-            cell.titleView.text = item.title
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAt", indexPath.row)
-        if indexPath.row >= Utils.ads_after && (indexPath.row % Utils.ads_after) == 0 {
-            print("not a data cell")
-        }else{
-            performSegue(withIdentifier: "toDocument", sender: indexPath)
-        }
-    }*/
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDocument"{
-            let vc = segue.destination as! DocumentViewController
-            let indexPath = sender as! IndexPath
-            print(indexPath.row)
-            var position = indexPath.row
-            if position >= Utils.ads_after {
-                position = position - (position/Utils.ads_after)
-            }
-            vc.file = self.items![position]
-        }
-    }
-    
 }

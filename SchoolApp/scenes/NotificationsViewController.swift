@@ -37,16 +37,6 @@ class NotificationsViewController: WithGenericTableView<NotificationCell, YNotif
         
         refreshData()
         
-        
-        let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "admob_activation") {
-            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            addBannerViewToView(bannerView)
-            bannerView.adUnitID = Utils.banner
-            bannerView.rootViewController = self
-            bannerView.load(GADRequest())
-        }
-        
     }
     
     

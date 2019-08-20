@@ -23,6 +23,8 @@ class QuestionCreateVC: BaseViewController {
     override func loadView() {
         super.loadView()
         
+        supportAds = false
+        
         drawMainView()
         
         let titleView = LabelBold()

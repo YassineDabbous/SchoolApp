@@ -38,7 +38,7 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
     
     override func loadView() {
         super.loadView()
-        
+        supportAds = false
         drawMainView()
         
         headerView = UIView(frame: .zero)
@@ -46,13 +46,13 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
         headerView.atTop(of: main, height: 150)
         
         imgView = UIImageView(image: UIImage(named: "app-logo"))
-        view.addSubview(imgView)
-        //imgView.anchor(centerX: headerView.centerXAnchor, centerY: headerView.centerYAnchor, size: CGSize(width: 100, height: 100))
+        headerView.addSubview(imgView)
         imgView.anchor(top: headerView.topAnchor, leading: headerView.leadingAnchor, trailing: headerView.trailingAnchor, padding: UIEdgeInsets(top: 20, left: 40, bottom: 0, right: 40), size: CGSize(width: 0, height: 80))
         
         nameView = LabelBold()
+        nameView.textAlignment = .center
         nameView.text = Utils.app_name
-        main.addSubview(nameView)
+        headerView.addSubview(nameView)
         nameView.toBottom(of: imgView, marginTop:4)
         
         tableView = UITableView(frame: .zero)

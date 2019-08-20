@@ -11,6 +11,8 @@
 		170CFD8622EF2BFD00C22C44 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CFD8522EF2BFD00C22C44 /* ImagePicker.swift */; };
 		170E901F22F0FCB10061D643 /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E901E22F0FCB10061D643 /* Db.swift */; };
 		170E902122F100630061D643 /* LocalDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E902022F100630061D643 /* LocalDataHandler.swift */; };
+		172A7696230C558700DA65D7 /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7695230C558700DA65D7 /* Inputs.swift */; };
+		172A7698230C55BA00DA65D7 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7697230C55BA00DA65D7 /* Labels.swift */; };
 		17351ED822FEE1640067DA18 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17351ED722FEE1640067DA18 /* OnBoardingViewController.swift */; };
 		17351EDA22FEE2100067DA18 /* OnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17351ED922FEE2100067DA18 /* OnboardPage.swift */; };
 		176C30E222DC96E500A67E9B /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C30DE22DC96E500A67E9B /* ResetViewController.swift */; };
@@ -49,7 +51,7 @@
 		178CB58F22D7367B008762EB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4C722D73671008762EB /* UIColorExtension.swift */; };
 		178CB59022D7367B008762EB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4C822D73671008762EB /* Downloader.swift */; };
 		178CB59122D7367B008762EB /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4C922D73671008762EB /* Modal.swift */; };
-		178CB59222D7367B008762EB /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4CA22D73671008762EB /* Themes.swift */; };
+		178CB59222D7367B008762EB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4CA22D73671008762EB /* Buttons.swift */; };
 		178CB59322D7367B008762EB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4CB22D73671008762EB /* extensions.swift */; };
 		178CB59422D7367B008762EB /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4CD22D73671008762EB /* UIButtonExtensions.swift */; };
 		178CB59522D7367B008762EB /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB4CF22D73671008762EB /* Alerts.swift */; };
@@ -208,6 +210,8 @@
 		170CFD8522EF2BFD00C22C44 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		170E901E22F0FCB10061D643 /* Db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Db.swift; sourceTree = "<group>"; };
 		170E902022F100630061D643 /* LocalDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataHandler.swift; sourceTree = "<group>"; };
+		172A7695230C558700DA65D7 /* Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
+		172A7697230C55BA00DA65D7 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		17351ED722FEE1640067DA18 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		17351ED922FEE2100067DA18 /* OnboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPage.swift; sourceTree = "<group>"; };
 		176C30DE22DC96E500A67E9B /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +258,7 @@
 		178CB4C722D73671008762EB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		178CB4C822D73671008762EB /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		178CB4C922D73671008762EB /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		178CB4CA22D73671008762EB /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		178CB4CA22D73671008762EB /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		178CB4CB22D73671008762EB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		178CB4CD22D73671008762EB /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		178CB4CF22D73671008762EB /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -427,6 +431,16 @@
 			path = local;
 			sourceTree = "<group>";
 		};
+		172A7694230C550F00DA65D7 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				178CB4CA22D73671008762EB /* Buttons.swift */,
+				172A7695230C558700DA65D7 /* Inputs.swift */,
+				172A7697230C55BA00DA65D7 /* Labels.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		177D5D3A22F1CE3300CAFC12 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,11 +539,11 @@
 		178CB4C522D73671008762EB /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				172A7694230C550F00DA65D7 /* Themes */,
 				178CB4C622D73671008762EB /* UIViewController+Extensions.swift */,
 				178CB4C722D73671008762EB /* UIColorExtension.swift */,
 				178CB4C822D73671008762EB /* Downloader.swift */,
 				178CB4C922D73671008762EB /* Modal.swift */,
-				178CB4CA22D73671008762EB /* Themes.swift */,
 				178CB4CB22D73671008762EB /* extensions.swift */,
 				177D5D3F22F83B5F00CAFC12 /* StringEX.swift */,
 				177D5D4122F83BCF00CAFC12 /* UIImageEx.swift */,
@@ -1356,7 +1370,7 @@
 				178CB60522D7367B008762EB /* Result.swift in Sources */,
 				178CB66522D799F6008762EB /* SearchView.swift in Sources */,
 				176C30F122DD577900A67E9B /* AnswerCell.swift in Sources */,
-				178CB59222D7367B008762EB /* Themes.swift in Sources */,
+				178CB59222D7367B008762EB /* Buttons.swift in Sources */,
 				178CB5EF22D7367B008762EB /* ViewController0.swift in Sources */,
 				177D5D5D22F9DF6000CAFC12 /* AppHelper.swift in Sources */,
 				178CB63922D73B46008762EB /* MultiReturn.swift in Sources */,
@@ -1386,6 +1400,7 @@
 				178CB59522D7367B008762EB /* Alerts.swift in Sources */,
 				178CB66422D799F6008762EB /* GridCategoryCell.swift in Sources */,
 				170CFD8622EF2BFD00C22C44 /* ImagePicker.swift in Sources */,
+				172A7698230C55BA00DA65D7 /* Labels.swift in Sources */,
 				178CB61822D7367B008762EB /* AppDisplayable.swift in Sources */,
 				178CB58E22D7367B008762EB /* UIViewController+Extensions.swift in Sources */,
 				178CB60022D7367B008762EB /* GenericTableViewCell.swift in Sources */,
@@ -1397,6 +1412,7 @@
 				178CB66D22D799F6008762EB /* Printer.swift in Sources */,
 				177D5D3C22F1CEB100CAFC12 /* CollectionViewEx.swift in Sources */,
 				178CB47622D73334008762EB /* AppDelegate0.swift in Sources */,
+				172A7696230C558700DA65D7 /* Inputs.swift in Sources */,
 				178CB5C322D7367B008762EB /* RatingBar.swift in Sources */,
 				178CB66722D799F6008762EB /* AdViewCell.swift in Sources */,
 				176C30E322DC96E500A67E9B /* AuthRouter.swift in Sources */,

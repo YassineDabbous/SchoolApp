@@ -11,6 +11,14 @@ import GoogleMobileAds
 
 extension BaseViewController {
     
+    func showBannerAd(){
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = Utils.banner
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     public func increasePages(){
         Utils.print("increasePages")
         BaseViewController.admob_interstitial_pages_current_count = BaseViewController.admob_interstitial_pages_current_count+1

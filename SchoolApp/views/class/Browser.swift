@@ -10,7 +10,7 @@ import UIKit
 
 class Browser: UIView {
 
-    var card:UIView!
+    
     var browser:UIWebView!
     
     override init(frame: CGRect) {
@@ -31,7 +31,8 @@ class Browser: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        backgroundColor = UIColor.white
+        backgroundColor = .white
+        browser.backgroundColor = .white
         layer.borderColor = UIColor.gray.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 8.0
