@@ -39,7 +39,7 @@ class AppHelper {
             mail.setMessageBody("<p>\(message)</p>", isHTML: true)
             vc.present(mail, animated: true)
         } else {
-            // show failure alert
+            Alerts.showAlert(vc: vc, title: .localized(.Error), message: "can't send email"){}
         }
     }
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

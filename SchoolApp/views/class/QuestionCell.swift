@@ -16,7 +16,7 @@ class QuestionCell: GenericTableViewCell<Question> {
     
     override func loadMe() {
         
-        answeredLabel = UILabel()
+        answeredLabel = LabelBold()
         self.addSubview(answeredLabel)
         answeredLabel.anchor(leading: card.leadingAnchor, centerY: card.centerYAnchor,
                        padding: UIEdgeInsets(top: 2, left: 8, bottom: 2, right: 8),
@@ -44,13 +44,14 @@ class QuestionCell: GenericTableViewCell<Question> {
         titleView.textColor = .gray
         
         answeredLabel.textColor = .white
+        answeredLabel.textAlignment = .center
         answeredLabel.adjustsFontSizeToFitWidth = true
         answeredLabel.clipsToBounds = true
         answeredLabel.layer.cornerRadius = 20
     }
     
     override func bind() {
-        if item!.commentStatus!.elementsEqual("open") {
+        if !item!.answered! {
             answeredLabel.text = .localized(.NotAnswered)
             answeredLabel.backgroundColor = .red
         } else {

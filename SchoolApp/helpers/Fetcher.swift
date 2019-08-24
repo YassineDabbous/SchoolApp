@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class Fetcher: NSObject {
-    
+    /*
 
     //DB_FEATURE let db:Db = Db()
     let util:Utils = Utils()
@@ -205,5 +205,5 @@ class Fetcher: NSObject {
             }
         }).resume()
     }
-    
+    */
 }

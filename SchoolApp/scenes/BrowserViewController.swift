@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class BrowserViewController: BaseViewController {
     
-    public var url = Utils.server_url
+    public var url = Utils.url_privacy
     var webView:Browser!
     
     override func loadView() {
@@ -22,17 +22,22 @@ class BrowserViewController: BaseViewController {
         webView = Browser(frame: .zero)
         self.main.addSubview(webView)
         webView.fill(parent: main)
-        
-        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)  ?? Utils.server_url
         print("url is", url)
-        let urll = URL(string: url)!
-        webView.browser.loadRequest(URLRequest(url: urll))
+        if let urll = URL(string: url) {
+            webView.browser.loadRequest(URLRequest(url: urll))
+        } else {
+            Alerts.showAlert(vc: self, title: "", message:"Can't open this url"){
+                self.dismissMe()
+            }
+        }
+        
         
     }
     

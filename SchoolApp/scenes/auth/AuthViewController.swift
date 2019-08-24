@@ -84,7 +84,7 @@ class AuthViewController: BaseViewController {
         view.addSubview(stack)
         stack.anchor(top: main.topAnchor, leading: main.leadingAnchor, bottom: main.bottomAnchor, trailing: main.trailingAnchor)*/
         
-        view.layoutIfNeeded()
+        
         
     }
     
@@ -117,7 +117,7 @@ class AuthViewController: BaseViewController {
             if let d = data {
                 dump(d)
                 UserDefaults.Account.auth(d)
-                self.router.dismiss()
+                self.router.questions()
             }
         }
         

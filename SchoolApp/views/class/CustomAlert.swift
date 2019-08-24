@@ -39,8 +39,9 @@ class CustomAlert: UIView, Modal {
         let dialogViewWidth = frame.width-64
         
         let titleLabel = UILabel(frame: CGRect(x: 8, y: 8, width: dialogViewWidth-16, height: 30))
-        titleLabel.text = "عدد المشاهدات: "+count //"Ads"
+        titleLabel.text = count //"عدد المشاهدات: "+
         titleLabel.textAlignment = .center
+        titleLabel.adjustsFontSizeToFitWidth = true
         dialogView.addSubview(titleLabel)
         
         let separatorLineView = UIView()

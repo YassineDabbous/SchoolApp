@@ -171,11 +171,13 @@ class QuestionViewController: WithGenericTableView<AnswerCell, Answer> {
     }
     func saveMe(answer:String){
         let me = UserDefaults.Account.auth()?.id ?? 0
-        perform(APIClient.answer(request: AnswerRequest(title: "", description: answer, parent: "\(question.id!)", uid: "\(me)"))){ success, data in
-            if success, let d = data {
-                self.items?.append(d)
-                self.tableView.reloadData()
-                Alerts.ok(vc: self)
+        if let parent = question.id {
+            perform(APIClient.answer(request: AnswerRequest(title: "", description: answer, parent: "\(parent)", uid: "\(me)"))){ success, data in
+                if success, let d = data {
+                    self.items?.append(d)
+                    self.tableView.reloadData()
+                    Alerts.ok(vc: self)
+                }
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 import PromiseKit
 
 struct MenuItem {
@@ -28,7 +29,7 @@ enum DrawerItem:String {
 class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
     
     var mainController:MainViewController!
-    lazy var router:LeftDrawerRouter = LeftDrawerRouter(viewController: self)
+    lazy var router:MainRoutable = MainRoutable(viewController: mainController) // navigation in mainController and not in side drawer
     
     
     var headerView:UIView!
@@ -66,7 +67,6 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
         
         headerView.backgroundColor = .white
         
-        router = LeftDrawerRouter(viewController: mainController)
         initTable(&tableView)
         self.items = [
             MenuItem(title: "", icon: "lightbulb-on-outline", type: .solutions),
@@ -81,9 +81,16 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
             MenuItem(title: "", icon: "logout", type: .logout)
         ]
         
-        nameView.text = UserDefaults.Account.auth()?.displayName ?? Utils.app_name
+        //nameView.text = UserDefaults.Account.auth()?.displayName ?? Utils.app_name
     }
     
+    static var name:String?
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let displayName = LeftViewController.name ?? Utils.app_name
+        print("left drawer witll appear", displayName)
+        nameView.text = displayName
+    }
     
     
     override func onInteract(_ indexPath: IndexPath, _ action: Action, _ model: MenuItem?) {
@@ -109,7 +116,9 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
                 AppHelper.rateApp { (done) in
                 }
             case .contactUs:
-                AppHelper.sendEmail(vc: self, message: "")
+                router.browser(url: Utils.url_contact)
+                toggleLeft()
+                //AppHelper.sendEmail(vc: self, message: "")
             case .shareApp:
                 AppHelper.shareApp(vc: self)
             case .privacy:
@@ -128,28 +137,9 @@ class LeftViewController : WithGenericTableView<LeftDrawerCell, MenuItem> {
     }
     
 }
-struct LeftDrawerRouter{
-    weak var viewController:UIViewController?
-    init(viewController:UIViewController) {
-        self.viewController = viewController
-    }
-}
 
-extension LeftDrawerRouter: AppRoutable{
-    func editProfile() {
-        show(storyboard: .auth, identifier: "AccountEditorVC") { (controller: CategororiesViewController) in
-        }
-    }
-    func changePassword() {
-        show(storyboard: .auth, identifier: "PasswordViewController") { (controller: NotificationsViewController) in
-        }
-    }
-    func orders() {
-        show(storyboard: .orders, identifier: "OrdersViewController") { (controller: NotificationsViewController) in
-        }
-    }
-    func addresses() {
-        show(storyboard: .addresses, identifier: "AddressesViewController") { (controller: NotificationsViewController) in
-        }
+extension LeftViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

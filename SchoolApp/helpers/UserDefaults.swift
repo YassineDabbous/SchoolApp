@@ -38,6 +38,7 @@ extension UserDefaults {
         
         static func auth(_ value:AuthResponse?){
             if let value = value {
+                LeftViewController.name = value.displayName
                 let coder = JSONEncoder()
                 if let v = try? coder.encode(value) {
                     UserDefaults.Account.set(v, forKey: .auth)

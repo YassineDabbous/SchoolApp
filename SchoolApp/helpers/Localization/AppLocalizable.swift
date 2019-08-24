@@ -55,6 +55,17 @@ extension Localizable {
     static let Cancel = Localizable(NSLocalizedString("Cancel", comment: ""))
     
     
+    static let onBoardingTitle1 = Localizable(NSLocalizedString("onBoardingTitle1", comment: ""))
+    static let onBoardingMsg1 = Localizable(NSLocalizedString("onBoardingMsg1", comment: ""))
+    static let onBoardingTitle2 = Localizable(NSLocalizedString("onBoardingTitle2", comment: ""))
+    static let onBoardingMsg2 = Localizable(NSLocalizedString("onBoardingMsg2", comment: ""))
+    static let onBoardingTitle3 = Localizable(NSLocalizedString("onBoardingTitle3", comment: ""))
+    static let onBoardingMsg3 = Localizable(NSLocalizedString("onBoardingMsg3", comment: ""))
+    
+    static let Continue = Localizable(NSLocalizedString("Continue", comment: ""))
+    static let Skip = Localizable(NSLocalizedString("Skip", comment: ""))
+    static let GetStarted = Localizable(NSLocalizedString("GetStarted", comment: ""))
+    
     
     static let Title = Localizable(NSLocalizedString("Title", comment: ""))
     static let Description = Localizable(NSLocalizedString("Description", comment: ""))

@@ -23,6 +23,7 @@ class BookCell: GenericTableViewCell<Post> {
         
         
         titleView = LabelBold()
+        titleView.numberOfLines = 0
         self.addSubview(titleView)
         titleView.anchor(top: card.topAnchor, leading: imgView.trailingAnchor, bottom: card.bottomAnchor, trailing: card.trailingAnchor,
                          padding: UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8))

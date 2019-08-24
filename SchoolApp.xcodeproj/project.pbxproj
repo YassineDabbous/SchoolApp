@@ -539,15 +539,10 @@
 		178CB4C522D73671008762EB /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				178CB4CC22D73671008762EB /* extensions */,
 				172A7694230C550F00DA65D7 /* Themes */,
-				178CB4C622D73671008762EB /* UIViewController+Extensions.swift */,
-				178CB4C722D73671008762EB /* UIColorExtension.swift */,
 				178CB4C822D73671008762EB /* Downloader.swift */,
 				178CB4C922D73671008762EB /* Modal.swift */,
-				178CB4CB22D73671008762EB /* extensions.swift */,
-				177D5D3F22F83B5F00CAFC12 /* StringEX.swift */,
-				177D5D4122F83BCF00CAFC12 /* UIImageEx.swift */,
-				178CB4CC22D73671008762EB /* extensions */,
 				178CB4CE22D73671008762EB /* alerts */,
 				178CB4D122D73671008762EB /* UserDefaultable.swift */,
 				178CB4D322D73671008762EB /* UserDefaults.swift */,
@@ -564,6 +559,11 @@
 		178CB4CC22D73671008762EB /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				178CB4CB22D73671008762EB /* extensions.swift */,
+				177D5D3F22F83B5F00CAFC12 /* StringEX.swift */,
+				177D5D4122F83BCF00CAFC12 /* UIImageEx.swift */,
+				178CB4C722D73671008762EB /* UIColorExtension.swift */,
+				178CB4C622D73671008762EB /* UIViewController+Extensions.swift */,
 				177D5D3A22F1CE3300CAFC12 /* Lists */,
 				178CB4CD22D73671008762EB /* UIButtonExtensions.swift */,
 				178CB64822D78911008762EB /* UIViewExtensions.swift */,
@@ -1668,7 +1668,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CVCULYF9AB;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1690,7 +1690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CVCULYF9AB;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

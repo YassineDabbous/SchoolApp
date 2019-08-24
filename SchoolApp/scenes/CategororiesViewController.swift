@@ -61,7 +61,7 @@ class CategororiesViewController: GenericCollection , UITextFieldDelegate {
         self.main.addSubview(myCollectionView)
         myCollectionView.anchor(top: search.bottomAnchor, leading: main.leadingAnchor,
                                 bottom: main.bottomAnchor, trailing: main.trailingAnchor,
-                                padding: UIEdgeInsets(top: 0, left: 0, bottom: 54, right: 0))
+                                padding: UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0))
         
     }
     
@@ -91,25 +91,23 @@ class CategororiesViewController: GenericCollection , UITextFieldDelegate {
         
         refreshData()
         
-        /*fetcher.fetchUpdates(){
-            
-            self.fetcher.fetchSubjects(){ (result: [YSubject]) in
-                self.items = result
-                self.myCollectionView.reloadData()
-                self.view.setNeedsLayout()
-            }
-        }*/
-        
-        
-        let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "admob_activation") {
-            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            addBannerViewToView(bannerView)
-            bannerView.adUnitID = Utils.banner
-            bannerView.rootViewController = self
-            bannerView.load(GADRequest())
+        if !CategororiesViewController.poped {
+            getAds()
         }
         
+        
+    }
+    
+    static var poped:Bool = false
+    func getAds(){
+        CategororiesViewController.poped = true
+        self.perform(APIClient.getAds()){ success, data in
+            self.hideIndicator()
+            if let d = data {
+                let alert = CustomAlert(count: d.title!, url: d.url, image: d.img!)
+                alert.show(animated: true)
+            }
+        }
     }
     
     func needUpdate(){

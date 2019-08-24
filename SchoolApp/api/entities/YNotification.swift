@@ -12,4 +12,5 @@ struct YNotification: Codable {
     let message: String?
     let type: String?
     let time: Int?
+    let ago: String?
 }

@@ -44,7 +44,8 @@ extension UIView {
         layoutIfNeeded()
     }
     
-    func fill(parent:UIView){
+    func fill(parent:UIView, margin:CGFloat=0){
+        let m = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         anchor(top: parent.topAnchor, leading: parent.leadingAnchor, bottom: parent.bottomAnchor, trailing: parent.trailingAnchor)
     }
     

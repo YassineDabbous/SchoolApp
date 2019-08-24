@@ -49,28 +49,25 @@ extension UITableView {
 extension UITableView : GADBannerViewDelegate {
 
     func getAdmobCell(root:UIViewController) -> UITableViewCell {
-            let cell:AdViewCell = dequeueReusableCell(withIdentifier: "AdViewCell") as! AdViewCell
-            //cell.backgroundColor = UIColor.clear
-            //cell.contentView.backgroundColor = UIColor.clear
-            cell.card.layer.cornerRadius = 4.0
-            cell.card.backgroundColor = UIColor.white
+        let cell = dequeueReusableCell(withIdentifier: "AdViewCell")
+        cell?.backgroundColor = .orange
         
-            let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            bannerView.backgroundColor = UIColor.white
-            bannerView.adUnitID = Utils.banner
-            bannerView.delegate = self
-            bannerView.rootViewController = root
-            bannerView.load(GADRequest())
-            bannerView.autoresizesSubviews = true
-            bannerView.center = cell.card.convert(cell.card.center, from: cell.card.superview)
-        bannerView.autoresizingMask = UIView.AutoresizingMask(rawValue: (UIView.AutoresizingMask.flexibleHeight.rawValue | UIView.AutoresizingMask.flexibleWidth.rawValue))
+        let card = UIView(frame: .zero)
+        cell?.addSubview(card)
+        card.fill(parent: cell!, margin: 8)
+        card.layer.cornerRadius = 4.0
+        card.backgroundColor = .white
         
-        for v in cell.card.subviews{
-            v.removeFromSuperview()
-        }
-            cell.card.addSubview(bannerView)
-            //bannerView.frame = CGRect(x: 0, y: 0, width: cell.card.frame.width, height: cell.card.frame.height)
-            return cell
+        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.backgroundColor = .white
+        bannerView.adUnitID = Utils.banner
+        bannerView.delegate = self
+        bannerView.rootViewController = root
+        bannerView.load(GADRequest())
+        
+        card.addSubview(bannerView)
+        bannerView.fill(parent: card)
+        return cell!
     }
 
 }

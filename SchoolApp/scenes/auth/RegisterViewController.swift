@@ -84,7 +84,7 @@ class RegisterViewController: BaseViewController {
                 if let d = data {
                     dump(d)
                     UserDefaults.Account.auth(d)
-                    self.router.dismiss()
+                    self.router.questions()
                 }
             }
         } else {

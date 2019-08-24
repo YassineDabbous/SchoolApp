@@ -48,6 +48,7 @@ class WithGenericTableView<CELL: GenericTableViewCell<MODEL>, MODEL>: BaseViewCo
     
     open func setupTableView() {
         //cv?.register(UINib(nibName: CELL.nibName, bundle: nil), forCellWithReuseIdentifier: CELL.reuseIdentifier)
+        cv?.register(UITableViewCell.self, forCellReuseIdentifier: "AdViewCell")
         cv?.register(CELL.self, forCellReuseIdentifier: CELL.reuseIdentifier)
         //cv?.register(CELL2.self, forCellReuseIdentifier: CELL2.reuseIdentifier)
         
@@ -74,25 +75,39 @@ class WithGenericTableView<CELL: GenericTableViewCell<MODEL>, MODEL>: BaseViewCo
         } else {
             cv?.emptyMessage(hide: true)
         }
-        return items?.count ?? 0
+        let s = items?.count ?? 0
+        if supportAds {
+            return s + (s / Utils.ads_after)
+        } else {
+            return s
+        }
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:CELL = tableView.dequeueReusableCell(withIdentifier: CELL.reuseIdentifier, for: indexPath) as! CELL
-        guard let model = items?[indexPath.row] else {
-            print("model is nil, return empty cell")
+        if supportAds && indexPath.row >= Utils.ads_after && (indexPath.row % Utils.ads_after) == 0 {
+            return tableView.getAdmobCell(root: self)
+        }else{
+            var position = indexPath.row
+            if supportAds && position >= Utils.ads_after {
+                position = position - (position/Utils.ads_after)
+            }
+            let cell:CELL = tableView.dequeueReusableCell(withIdentifier: CELL.reuseIdentifier, for: indexPath) as! CELL
+            guard let model = items?[position] else {
+                print("model is nil, return empty cell")
+                return cell
+            }
+            cell.item = model
+            cell.onAction = { (model, action) -> () in
+                self.onInteract(indexPath, action, model)
+            }
             return cell
         }
-        cell.item = model
-        cell.onAction = { (model, action) -> () in
-            self.onInteract(indexPath, action, model)
-        }
-        return cell
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    /*func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
-    }
+    }*/
     
     var headerTitle : String?
     

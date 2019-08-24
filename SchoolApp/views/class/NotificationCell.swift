@@ -18,17 +18,17 @@ class NotificationCell: GenericTableViewCell<YNotification> {
     override func loadMe() {
         
         titleView = UILabel()
-        self.addSubview(titleView)
+        card.addSubview(titleView)
         titleView.atTop(of: card)
         
         typeView = UILabel()
-        self.addSubview(typeView)
+        card.addSubview(typeView)
         typeView.anchor(top: titleView.bottomAnchor, leading: card.leadingAnchor, bottom: card.bottomAnchor, size: CGSize(width: 60, height: 0))
         
         
         timeView = UILabel()
-        self.addSubview(timeView)
-        timeView.anchor(top: titleView.bottomAnchor, leading: typeView.trailingAnchor, bottom: card.bottomAnchor, trailing: card.trailingAnchor)
+        card.addSubview(timeView)
+        timeView.anchor(top: titleView.bottomAnchor, bottom: card.bottomAnchor, trailing: card.trailingAnchor)
         
         
         
@@ -52,7 +52,7 @@ class NotificationCell: GenericTableViewCell<YNotification> {
     override func bind() {
         titleView.text = item!.message
         typeView.text = item!.type
-        timeView.text = "\(item!.time)"
+        timeView.text = item!.ago
     }
     
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 class QuestionCreateVC: BaseViewController {
 
-    lazy var router:LeftDrawerRouter = LeftDrawerRouter(viewController: self)
+    lazy var router:MainRoutable = MainRoutable(viewController: self)
     
     var titleInput:UITextField!
     var descriptionInput:UITextView!
@@ -101,9 +101,13 @@ class QuestionCreateVC: BaseViewController {
         }
         let d = "\(t) \(imgSrc)"
         perform(APIClient.ask(request: QuestionRequest(title: titleInput.text, description: d, parent: "", uid: "\(me)"))){ success, data in
-            if success, let d = data {
-                Alerts.showAlert(vc: self, title: .localized(.done), message: "") {
-                    self.router.question(question: d)
+            if success {
+                if let d = data {
+                    Alerts.showAlert(vc: self, title: .localized(.done), message: "") {
+                        self.router.question(question: d)
+                    }
+                } else {
+                    self.router.questions()
                 }
             }
         }

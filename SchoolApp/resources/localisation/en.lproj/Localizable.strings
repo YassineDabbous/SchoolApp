@@ -12,6 +12,11 @@
 "None" = "None";
 "Done" = "Done";
 
+"Continue" = "Continue";
+"Skip" = "Skip";
+"GetStarted" = "Get Started!";
+
+"Save" = "Save";
 "Edit" = "Edit";
 "Alert" = "Alert";
 "Error" = "Error";
@@ -23,6 +28,15 @@
 "Fetching New Data ..." = "Fetching New Data ...";
 "No Data, pull down to refresh or try again later" = "No Data, pull down to refresh or try again later";
 "What do you search" = "What do you search?";
+
+"onBoardingTitle1" = "Books and Files";
+"onBoardingMsg1" = "ZAD first app to offer educational book and file solutions";
+"onBoardingTitle2" = "Questions and Inquiries";
+"onBoardingMsg2" = "ZAD in your service to ask questions and inquiries as well as your requests and answer them";
+"onBoardingTitle3" = "Training & Exams";
+"onBoardingMsg3" = "ZAD offers you training, exams and electronic help for exams";
+
+
 
 "Solutions" = "Solutions";
 "Training" = "Training";

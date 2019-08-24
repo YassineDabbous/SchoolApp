@@ -40,7 +40,7 @@ enum PostsEndpoint: APIConfiguration {
             case .post:
                 return .get
             case .search:
-                return .get
+                return .post
         }
     }
     

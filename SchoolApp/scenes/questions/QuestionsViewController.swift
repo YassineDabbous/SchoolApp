@@ -17,7 +17,7 @@ class QuestionsViewController: WithGenericTableView<QuestionCell, Question> {
     
     override func loadView() {
         super.loadView()
-        
+        //supportAds = false
         drawMainView()
         
         

@@ -9,6 +9,7 @@
 import Foundation
 struct Question: Codable {
     let id, postAuthor: Int?
+    let answered: Bool?
     let postDate, postDateGmt, postContent, postTitle: String?
     let postExcerpt, postStatus, commentStatus, pingStatus: String?
     let postPassword, postName, toPing, pinged: String?
@@ -21,6 +22,7 @@ struct Question: Codable {
     
     init(id:Int){
         self.id = id
+        answered = false
         postAuthor = 0
         postDate = ""
         postDateGmt = ""
@@ -47,6 +49,7 @@ struct Question: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"
+        case answered = "answered"
         case postAuthor = "post_author"
         case postDate = "post_date"
         case postDateGmt = "post_date_gmt"

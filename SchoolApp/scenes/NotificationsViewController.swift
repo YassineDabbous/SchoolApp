@@ -66,10 +66,6 @@ extension NotificationsViewController : UITableViewDataSource, UITableViewDelega
             }
             let cell:NotificationCell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
             let item = self.items[position]
-            cell.backgroundColor = UIColor.clear
-            cell.titleView.text = item.message
-            cell.typeView.text = item.type
-            cell.timeView.text = item.time
             return cell
         }
     }

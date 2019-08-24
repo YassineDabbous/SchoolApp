@@ -32,7 +32,7 @@ class BaseAPIClient {
                     case .failure(let error):
                         //seal.fulfill(route.offline) TODO
                         print("errroror::::", error.localizedDescription)
-                        seal.reject(BackendError.jsonSerialization(error: error))
+                        seal.reject(BackendError.network(error: error))
                 }
             }
         }

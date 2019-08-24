@@ -36,15 +36,18 @@ extension UIViewController {
             }
         }
         if let msg = response.message, !msg.elementsEqual("") {
-            Alerts.showAlert(vc: self, title: .localized(.Alert), message: msg){
-            }
+            Toast.show(message: msg, controller: self)
+            
+            // presenting alert cause problem on presenting new controller at same time
+            //Alerts.showAlert(vc: self, title: .localized(.Alert), message: msg){
+            //}
         }
     }
     @objc func handleError(_ error:Error){
         print(error.localizedDescription)
         //Alerts.showMultiAlert(vc: self, title: "error", message: error.localizedDescription){
         //}
-        //Toast.show(message: error.localizedDescription, controller: self)
+        Toast.show(message: error.localizedDescription, controller: self)
     }
     
     func dismissMe(){

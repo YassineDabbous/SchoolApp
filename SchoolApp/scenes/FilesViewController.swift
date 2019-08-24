@@ -33,10 +33,11 @@ class FilesViewController: WithGenericTableView<BookCell, Post> {
                           size: CGSize(width: 0, height: 40))
         
         tableView = UITableView(frame: .zero)
+        
         self.main.addSubview(tableView)
         tableView.anchor(top: headerView.bottomAnchor, leading: main.leadingAnchor,
                          bottom: main.bottomAnchor, trailing: main.trailingAnchor,
-                         padding: UIEdgeInsets(top: 4, left: 4, bottom: 50, right: 4))
+                         padding: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
         
     }
     

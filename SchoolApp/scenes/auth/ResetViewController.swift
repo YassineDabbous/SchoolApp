@@ -26,7 +26,8 @@ class ResetViewController: BaseViewController {
     @objc func recover() {
         if let emailTxt = emailField.text {
             perform(APIClient.forgotten(email: emailTxt)){ success, data in
-                Alerts.ok(vc: self)
+                //Alerts.ok(vc: self)
+                self.router.categories(category: nil)
             }
         }
         //router.dismiss()

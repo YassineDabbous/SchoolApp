@@ -54,16 +54,16 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         view.imageView.image = UIImage(named: "app-logo")
         if index == 0 {
             //On the first page, change the text in the labels to say the following:
-            view.title.text = "المكتبة التعليمة"
-            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
+            view.title.text = .localized(.onBoardingTitle1)
+            view.subTitle.text = .localized(.onBoardingMsg1)
         } else if index == 1 {
             //On the second page, change the text in the labels to say the following:
-            view.title.text = "ملفات و فيديوهات"
-            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
+            view.title.text = .localized(.onBoardingTitle2)
+            view.subTitle.text = .localized(.onBoardingMsg2)
         } else {
             //On the thrid page, change the text in the labels to say the following:
-            view.title.text = "أسئلة و أجوبة"
-            view.subTitle.text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
+            view.title.text = .localized(.onBoardingTitle3)
+            view.subTitle.text = .localized(.onBoardingMsg3)
         }
         return view
     }
@@ -81,11 +81,11 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         overlay.pageControl.currentPage = Int(currentPage)
         overlay.continueButton.tag = Int(position)
         if currentPage == 0.0 || currentPage == 1.0 {
-            overlay.continueButton.setTitle("Continue", for: .normal)
-            overlay.skipButton.setTitle("Skip", for: .normal)
+            overlay.continueButton.setTitle(.localized(.Continue), for: .normal)
+            overlay.skipButton.setTitle(.localized(.Skip), for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle("Get Started!", for: .normal)
+            overlay.continueButton.setTitle(.localized(.GetStarted), for: .normal)
             overlay.continueButton.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
             overlay.skipButton.isHidden = true
         }

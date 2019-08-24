@@ -51,6 +51,7 @@ class GenericCollectionViewController<CELL: GenericCollectionViewCell<MODEL>, CE
         //cv?.register(UINib(nibName: CELL.nibName, bundle: nil), forCellWithReuseIdentifier: CELL.reuseIdentifier)
         cv?.register(CELL.self, forCellWithReuseIdentifier: CELL.reuseIdentifier)
         cv?.register(CELL2.self, forCellWithReuseIdentifier: CELL2.reuseIdentifier)
+        cv?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "AdViewCell")
         addRefreshControl()
     }
 
@@ -133,26 +134,38 @@ class GenericCollectionViewController<CELL: GenericCollectionViewCell<MODEL>, CE
         } else {
             cv?.emptyMessage(hide: true)
         }
-        return items?.count ?? 0
+        let s = items?.count ?? 0
+        if supportAds {
+            return s + (s / Utils.ads_after)
+        } else {
+            return s
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:GenericCollectionViewCell<MODEL>?
-        switch layoutOption {
-        case .largeGrid, .smallGrid:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL2.reuseIdentifier, for: indexPath) as? CELL2
-        default:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL.reuseIdentifier, for: indexPath) as? CELL
+        if supportAds && indexPath.row >= Utils.ads_after && (indexPath.row % Utils.ads_after) == 0 {
+            return collectionView.getAdmobCell(self, indexPath:indexPath)
+        }else{
+            var position = indexPath.row
+            if supportAds && position >= Utils.ads_after {
+                position = position - (position/Utils.ads_after)
+            }
+            let cell:GenericCollectionViewCell<MODEL>?
+            switch layoutOption {
+            case .largeGrid, .smallGrid:
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL2.reuseIdentifier, for: indexPath) as? CELL2
+            default:
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL.reuseIdentifier, for: indexPath) as? CELL
+            }
+            guard let model = items?[position] else { return cell! }
+            cell!.item = model
+            cell!.onAction = { (model, action) -> () in
+                self.onInteract(collectionView, indexPath, action, model)
+                self.onInteract(indexPath, action, model)
+            }
+            return cell!
         }
-        guard let model = items?[indexPath.row] else { return cell! }
-        cell!.item = model
-        cell!.onAction = { (model, action) -> () in
-            self.onInteract(collectionView, indexPath, action, model)
-            self.onInteract(indexPath, action, model)
-        }
-        return cell!
     }
-    
     
     
     func onInteract(_ collectionView: UICollectionView, _ indexPath:IndexPath, _ action:Action, _ model:MODEL?){

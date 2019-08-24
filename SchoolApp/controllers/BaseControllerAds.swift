@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 extension BaseViewController {
-    
+
     func showBannerAd(){
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBannerViewToView(bannerView)
