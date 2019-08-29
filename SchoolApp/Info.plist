@@ -30,9 +30,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app wants to take pictures.</string>
+	<string>This app wants to take picture and send it with your new Question.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app wants to use your photos.</string>
+	<string>This app wants to use your photos to send one with your new Question.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cairo-Regular.ttf</string>

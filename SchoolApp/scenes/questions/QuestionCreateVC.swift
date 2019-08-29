@@ -146,7 +146,7 @@ extension QuestionCreateVC: ImagePickerDelegate {
                             
                             //example if there is an id
                             self.attachementURL = response.object(forKey: "url")! as! String
-                            self.attachementLabel.text = "Attachement Added!"
+                            self.attachementLabel.text = .localized(.AttachementAdded)
                         
                         case .failure(let error):
                             print("Request failed with error: \(error)")

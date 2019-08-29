@@ -23,6 +23,8 @@ extension Localizable {
     static let Comments = Localizable(NSLocalizedString("Comments", comment: ""))
     static let Attachements = Localizable(NSLocalizedString("Attachements", comment: ""))
     static let AddAttachement = Localizable(NSLocalizedString("AddAttachement", comment: ""))
+    static let AttachementAdded = Localizable(NSLocalizedString("AttachementAdded", comment: ""))
+    
     
     static let Login = Localizable(NSLocalizedString("Login", comment: ""))
     static let Register = Localizable(NSLocalizedString("Register", comment: ""))

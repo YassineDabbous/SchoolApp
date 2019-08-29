@@ -63,6 +63,7 @@
 "PasswordReset"="Password Reset";
 
 "AddAttachement" = "Add Attachement";
+"AttachementAdded" = "Attachement Added!";
 
 "Title" = "Title";
 "Description" = "Description";

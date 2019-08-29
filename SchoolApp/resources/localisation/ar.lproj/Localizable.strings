@@ -65,6 +65,7 @@
 
 
 "AddAttachement" = "إضافة صورة";
+"AttachementAdded" = "تمت إضافة الصورة !";
 
 "Title" = "العنوان";
 "Description" =  "الوصف";
