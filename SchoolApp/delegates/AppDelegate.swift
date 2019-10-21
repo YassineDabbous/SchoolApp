@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import GoogleMobileAds
 import IQKeyboardManagerSwift
+//import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
         
+        
+        //GADMobileAds.configure(withApplicationID: Utils.initialize)
+        // initialized in plist.info
+        
+        // Use Firebase library to configure APIs.
+        
+        //FirebaseApp.configure()
+        
+        // Initialize the Google Mobile Ads SDK.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        
+        
+        
         setUpOneSignal(launchOptions:launchOptions)
         
         if !UserDefaults.Configs.onboarding() {
@@ -31,9 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
-        //GADMobileAds.configure(withApplicationID: Utils.initialize)
-        // initialized in plist.info
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         
         return true

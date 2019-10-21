@@ -27,7 +27,8 @@ class BaseAPIClient {
                 }
                 switch response.result {
                     case .success(let item):
-                        print("sunccessss:::: ",item.data ?? "nil")
+                        print("sunccessss::::")
+                        dump(item.data)
                         seal.fulfill(item)
                     case .failure(let error):
                         //seal.fulfill(route.offline) TODO

@@ -77,9 +77,7 @@
 		178CB5D122D7367B008762EB /* BaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB51322D73678008762EB /* BaseAPIClient.swift */; };
 		178CB5E822D7367B008762EB /* AllTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB52D22D73678008762EB /* AllTypes.swift */; };
 		178CB5EB22D7367B008762EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53022D73678008762EB /* Post.swift */; };
-		178CB5EF22D7367B008762EB /* ViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53522D73679008762EB /* ViewController0.swift */; };
 		178CB5F022D7367B008762EB /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53622D73679008762EB /* MainRouter.swift */; };
-		178CB5F122D7367B008762EB /* BrowserViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53722D73679008762EB /* BrowserViewController0.swift */; };
 		178CB5F222D7367B008762EB /* BaseViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53922D73679008762EB /* BaseViewController0.swift */; };
 		178CB5F322D7367B008762EB /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53B22D73679008762EB /* SlideMenuController.swift */; };
 		178CB5F422D7367B008762EB /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CB53C22D73679008762EB /* LeftViewController.swift */; };
@@ -284,9 +282,7 @@
 		178CB51322D73678008762EB /* BaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
 		178CB52D22D73678008762EB /* AllTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTypes.swift; sourceTree = "<group>"; };
 		178CB53022D73678008762EB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		178CB53522D73679008762EB /* ViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController0.swift; sourceTree = "<group>"; };
 		178CB53622D73679008762EB /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		178CB53722D73679008762EB /* BrowserViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController0.swift; sourceTree = "<group>"; };
 		178CB53922D73679008762EB /* BaseViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController0.swift; sourceTree = "<group>"; };
 		178CB53B22D73679008762EB /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		178CB53C22D73679008762EB /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
@@ -664,9 +660,7 @@
 			isa = PBXGroup;
 			children = (
 				178CB69322D7AE94008762EB /* BaseControllerAds.swift */,
-				178CB53522D73679008762EB /* ViewController0.swift */,
 				178CB53622D73679008762EB /* MainRouter.swift */,
-				178CB53722D73679008762EB /* BrowserViewController0.swift */,
 				178CB53822D73679008762EB /* base */,
 			);
 			path = controllers;
@@ -1173,10 +1167,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SchoolApp/Pods-SchoolApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialShowcase/MaterialShowcase.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
@@ -1188,10 +1180,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialShowcase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
@@ -1349,7 +1339,6 @@
 				176C30F322DD59AB00A67E9B /* Question.swift in Sources */,
 				178CB5FA22D7367B008762EB /* WithGenericTableView.swift in Sources */,
 				178CB66322D799F6008762EB /* Toolbar.swift in Sources */,
-				178CB5F122D7367B008762EB /* BrowserViewController0.swift in Sources */,
 				17351EDA22FEE2100067DA18 /* OnboardPage.swift in Sources */,
 				178CB62A22D73918008762EB /* BrowserViewController.swift in Sources */,
 				170E902122F100630061D643 /* LocalDataHandler.swift in Sources */,
@@ -1371,7 +1360,6 @@
 				178CB66522D799F6008762EB /* SearchView.swift in Sources */,
 				176C30F122DD577900A67E9B /* AnswerCell.swift in Sources */,
 				178CB59222D7367B008762EB /* Buttons.swift in Sources */,
-				178CB5EF22D7367B008762EB /* ViewController0.swift in Sources */,
 				177D5D5D22F9DF6000CAFC12 /* AppHelper.swift in Sources */,
 				178CB63922D73B46008762EB /* MultiReturn.swift in Sources */,
 				176C30E422DC96E500A67E9B /* AuthViewController.swift in Sources */,
@@ -1668,7 +1656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CVCULYF9AB;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1690,7 +1678,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CVCULYF9AB;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

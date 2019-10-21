@@ -9,15 +9,18 @@ target 'SchoolApp' do
 	pod "PromiseKit", "~> 6.8"		# like RxSwift
 
 	pod 'Google-Mobile-Ads-SDK'
+	#pod 'Firebase/Analytics'
+	#pod 'Firebase/AdMob'
+
 	pod 'OneSignal', '>= 2.6.2', '< 3.0'
 
 	pod 'IQKeyboardManagerSwift'
-	pod "Hero"
+	#pod "Hero"
 
 	pod 'YouTubePlayer'
 
 	pod 'SwiftyOnboard'
-	pod 'MaterialShowcase'
+	#pod 'MaterialShowcase'
 
   target 'OneSignalNotificationServiceExtension' do
     pod 'OneSignal', '>= 2.6.2', '< 3.0'

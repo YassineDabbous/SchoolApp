@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Hero
+//import Hero
 
 
 extension AppDelegate {
@@ -42,7 +42,7 @@ extension AppDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barTintColor = Utils.appColor
         
-        nvc.hero
+        //nvc.hero
         
         //leftViewController.mainViewController = nvc
         

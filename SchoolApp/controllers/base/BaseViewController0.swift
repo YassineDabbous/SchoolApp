@@ -12,7 +12,6 @@ import GoogleMobileAds
 
 class BaseViewController: MainViewController {
     
-    
     var main: UIView = UIView(frame: .zero)
     var scrollView : UIScrollView!
     var isScrollable = false
@@ -86,7 +85,8 @@ class BaseViewController: MainViewController {
         //let defaults = UserDefaults.standard
         if supportAds { //defaults.bool(forKey: "admob_activation")
             if BaseViewController.interstitialView == nil {
-                createAd()
+                let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.createAd()
             }
             showInterstitial()
             showBannerAd()
